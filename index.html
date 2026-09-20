@@ -532,6 +532,60 @@
             transform: scale(1.08);
         }
 
+        .service-badge {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: rgba(15, 15, 15, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            color: var(--gold-light);
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            padding: 5px 12px;
+            border-radius: 20px;
+            border: 1px solid rgba(201, 169, 110, 0.45);
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 2;
+        }
+
+        .service-duration {
+            position: absolute;
+            bottom: 12px;
+            left: 12px;
+            background: rgba(0, 0, 0, 0.72);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            color: #ffffff;
+            font-size: 0.72rem;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            z-index: 2;
+        }
+
+        .service-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            justify-content: center;
+            margin: 10px 0 16px;
+        }
+
+        .service-tags span {
+            font-size: 0.72rem;
+            background: rgba(201, 169, 110, 0.1);
+            color: #9e7d3b;
+            border: 1px solid rgba(201, 169, 110, 0.28);
+            padding: 3px 9px;
+            border-radius: 12px;
+            font-weight: 500;
+        }
+
         .service-content {
             padding: 28px 24px 30px;
             display: flex;
@@ -1318,85 +1372,210 @@
         <div class="container">
             <div class="section-header">
                 <div class="gold-line"></div>
-                <span class="section-tag">Couture Menu</span>
-                <h2>Our Bespoke Services</h2>
-                <p>From precision dry-cutting to transformative dimensional balayage, we tailor every formula to your bone structure and hair health.</p>
+                <span class="section-tag">Couture Braids & Locks</span>
+                <h2>Signature Styles & Services</h2>
+                <p>Master artistry inspired by authentic African heritage and couture styling. From razor-sharp stitch cornrows to immaculate Sisterlocks, custom bob braids, and melted HD frontal installations.</p>
             </div>
 
             <!-- Filter Buttons -->
             <div class="services-filter-bar">
-                <button type="button" class="filter-btn active" data-filter="all">All Services</button>
-                <button type="button" class="filter-btn" data-filter="cuts">Cuts & Shape</button>
-                <button type="button" class="filter-btn" data-filter="color">Color & Balayage</button>
-                <button type="button" class="filter-btn" data-filter="styling">Styling</button>
-                <button type="button" class="filter-btn" data-filter="treatments">Treatments</button>
+                <button type="button" class="filter-btn active" data-filter="all">All Styles</button>
+                <button type="button" class="filter-btn" data-filter="braids">Signature Braids</button>
+                <button type="button" class="filter-btn" data-filter="locs">Locs & Sisterlocks</button>
+                <button type="button" class="filter-btn" data-filter="installs">Wigs & Frontal Installs</button>
+                <button type="button" class="filter-btn" data-filter="styling">Silk Press & Styling</button>
+                <button type="button" class="filter-btn" data-filter="treatments">Hair Treatments</button>
             </div>
 
             <div class="services-grid" id="services-grid">
-                <!-- Card 1 -->
-                <div class="service-card" data-category="cuts">
+                <!-- Card 1: Precision Stitch Braids -->
+                <div class="service-card" data-category="braids">
                     <div class="service-img-wrap">
-                        <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=600&q=80" alt="Precision Haircut" loading="lazy">
+                        <img src="images/stitch-braids.jpg" alt="Precision Stitch Braids" loading="lazy">
+                        <span class="service-badge">Flyer Signature</span>
+                        <span class="service-duration">⏱ 3.5 – 4.5 hrs</span>
                     </div>
                     <div class="service-content">
                         <div>
-                            <h3>Precision Cuts</h3>
-                            <p>Sculptural cuts mapped to your natural growth patterns and lifestyle. Includes botanical shampoo & blowout.</p>
-                        </div>
-                        <div class="service-footer">
-                            <span class="price">From $65</span>
-                            <button type="button" class="service-book-btn open-modal-btn" data-service="Precision Cuts" data-price="$65">Reserve</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="service-card" data-category="color">
-                    <div class="service-img-wrap">
-                        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80" alt="Balayage & Color" loading="lazy">
-                    </div>
-                    <div class="service-content">
-                        <div>
-                            <h3>Color & Balayage</h3>
-                            <p>Hand-painted ribbons, seamless melt gradients, and gloss glaze using organic, ammonia-free French color.</p>
+                            <h3>Precision Stitch Braids</h3>
+                            <p>Crisp razor-sharp geometric stitch lines fed in with ombre honey-blonde or natural tones, finished with delicately swooped and sculpted baby hair edges.</p>
+                            <div class="service-tags">
+                                <span>Feed-In Parting</span>
+                                <span>3D Stitch Detail</span>
+                                <span>Laid Baby Hair</span>
+                            </div>
                         </div>
                         <div class="service-footer">
                             <span class="price">From $120</span>
-                            <button type="button" class="service-book-btn open-modal-btn" data-service="Color & Balayage" data-price="$120">Reserve</button>
+                            <button type="button" class="service-book-btn open-modal-btn" data-service="Precision Stitch Braids" data-price="$120">Reserve</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card 3 -->
-                <div class="service-card" data-category="styling">
+                <!-- Card 2: Bohemian Knotless Braids -->
+                <div class="service-card" data-category="braids">
                     <div class="service-img-wrap">
-                        <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&q=80" alt="Styling and Blowouts" loading="lazy">
+                        <img src="images/boho-knotless.jpg" alt="Bohemian Knotless Braids" loading="lazy">
+                        <span class="service-badge">Trending Boho</span>
+                        <span class="service-duration">⏱ 4.5 – 6 hrs</span>
                     </div>
                     <div class="service-content">
                         <div>
-                            <h3>Styling & Blowouts</h3>
-                            <p>Silk presses, runway waves, and voluminous bouncy blowouts protected with humidity-resistant diamond serum.</p>
+                            <h3>Bohemian Knotless Braids</h3>
+                            <p>Tension-free, weightless knotless base interwoven with bouncy loose deep wave human hair curls in warm copper and rich ginger tones for romantic texture.</p>
+                            <div class="service-tags">
+                                <span>Zero Scalp Tension</span>
+                                <span>Human Hair Curls</span>
+                                <span>Copper & Auburn</span>
+                            </div>
                         </div>
                         <div class="service-footer">
-                            <span class="price">From $55</span>
-                            <button type="button" class="service-book-btn open-modal-btn" data-service="Styling & Blowouts" data-price="$55">Reserve</button>
+                            <span class="price">From $180</span>
+                            <button type="button" class="service-book-btn open-modal-btn" data-service="Bohemian Knotless Braids" data-price="$180">Reserve</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card 4 -->
-                <div class="service-card" data-category="treatments">
+                <!-- Card 3: Bob Box Braids & Gold Cuffs -->
+                <div class="service-card" data-category="braids">
                     <div class="service-img-wrap">
-                        <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&q=80" alt="Hair Treatments" loading="lazy">
+                        <img src="images/bob-box-braids.jpg" alt="Bob Box Braids with Gold Accents" loading="lazy">
+                        <span class="service-badge">Couture Bob</span>
+                        <span class="service-duration">⏱ 3 – 4 hrs</span>
                     </div>
                     <div class="service-content">
                         <div>
-                            <h3>Bond Treatments</h3>
-                            <p>Molecular peptide restoration, warm ozone steam hydration, and scalp detox to reverse thermal damage.</p>
+                            <h3>Bob Box Braids & Gold Cuffs</h3>
+                            <p>Chic chin-to-shoulder blunt bob box braids accessorized with luminous golden cuffs, filigree rings, and beads, paired with sleek curved hairline edges.</p>
+                            <div class="service-tags">
+                                <span>Blunt Bob Cut</span>
+                                <span>Gold Cuffs Included</span>
+                                <span>8–10 Wk Wear</span>
+                            </div>
+                        </div>
+                        <div class="service-footer">
+                            <span class="price">From $140</span>
+                            <button type="button" class="service-book-btn open-modal-btn" data-service="Bob Box Braids with Gold Cuffs" data-price="$140">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: HD Lace Frontal Wig Installation -->
+                <div class="service-card" data-category="installs">
+                    <div class="service-img-wrap">
+                        <img src="images/frontal-wig-install.jpg" alt="HD Lace Frontal Wig Installation" loading="lazy">
+                        <span class="service-badge">Invisible Melt</span>
+                        <span class="service-duration">⏱ 2.5 – 3.5 hrs</span>
+                    </div>
+                    <div class="service-content">
+                        <div>
+                            <h3>HD Lace Frontal Installation</h3>
+                            <p>Flawless skin-melt HD lace frontal or sew-in install with bleached knots, customized plucked hairline, flat anchor braid foundation, and voluminous deep wave styling.</p>
+                            <div class="service-tags">
+                                <span>Bleached Knots</span>
+                                <span>Invisible HD Lace</span>
+                                <span>Deep Wave Curls</span>
+                            </div>
+                        </div>
+                        <div class="service-footer">
+                            <span class="price">From $160</span>
+                            <button type="button" class="service-book-btn open-modal-btn" data-service="HD Frontal Wig Installation" data-price="$160">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5: Copper Butterfly Faux Locs -->
+                <div class="service-card" data-category="locs">
+                    <div class="service-img-wrap">
+                        <img src="images/copper-faux-locs.jpg" alt="Copper Butterfly Faux Locs" loading="lazy">
+                        <span class="service-badge">Boho Chic</span>
+                        <span class="service-duration">⏱ 4 – 5 hrs</span>
+                    </div>
+                    <div class="service-content">
+                        <div>
+                            <h3>Copper Butterfly Faux Locs</h3>
+                            <p>Distressed bohemian butterfly faux locs featuring organic thumb-loop texture in vibrant copper and rich bronze undertones. Ultra-lightweight and protective.</p>
+                            <div class="service-tags">
+                                <span>Distressed Loops</span>
+                                <span>Rich Copper Hue</span>
+                                <span>Crown Protection</span>
+                            </div>
+                        </div>
+                        <div class="service-footer">
+                            <span class="price">From $150</span>
+                            <button type="button" class="service-book-btn open-modal-btn" data-service="Copper Butterfly Faux Locs" data-price="$150">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6: Sisterlocks™ & Micro Locs Interlocking -->
+                <div class="service-card" data-category="locs">
+                    <div class="service-img-wrap">
+                        <img src="images/sisterlocks-microlocs.jpg" alt="Sisterlocks and Micro Locs Interlocking" loading="lazy">
+                        <span class="service-badge">Master Crown</span>
+                        <span class="service-duration">⏱ 3 – 6 hrs</span>
+                    </div>
+                    <div class="service-content">
+                        <div>
+                            <h3>Sisterlocks™ & Micro Locs</h3>
+                            <p>Precision symmetrical grid parting and tool interlocking for fine natural micro-locs. Full establishment consultations, grid repairs, and retightening sessions.</p>
+                            <div class="service-tags">
+                                <span>Precision Grid</span>
+                                <span>Interlocking Tool</span>
+                                <span>Gentle on Roots</span>
+                            </div>
+                        </div>
+                        <div class="service-footer">
+                            <span class="price">From $220</span>
+                            <button type="button" class="service-book-btn open-modal-btn" data-service="Sisterlocks & Microlocs Interlocking" data-price="$220">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 7: Liquid Silk Press & Steam -->
+                <div class="service-card" data-category="styling">
+                    <div class="service-img-wrap">
+                        <img src="images/silkpress.jpg" alt="Liquid Silk Press" loading="lazy">
+                        <span class="service-badge">High Gloss</span>
+                        <span class="service-duration">⏱ 1.5 – 2 hrs</span>
+                    </div>
+                    <div class="service-content">
+                        <div>
+                            <h3>Liquid Silk Press & Steam</h3>
+                            <p>Botanical clarifying shampoo, deep warm ozone hydration steam, and mirror-finish diamond thermal press without chemicals to nourish your natural hair.</p>
+                            <div class="service-tags">
+                                <span>Ozone Steam Spa</span>
+                                <span>Heat-Defying Gloss</span>
+                                <span>Zero Relaxers</span>
+                            </div>
+                        </div>
+                        <div class="service-footer">
+                            <span class="price">From $75</span>
+                            <button type="button" class="service-book-btn open-modal-btn" data-service="Liquid Silk Press" data-price="$75">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 8: Molecular Bond Therapy -->
+                <div class="service-card" data-category="treatments">
+                    <div class="service-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&q=80" alt="Molecular Bond Therapy" loading="lazy">
+                        <span class="service-badge">Restorative</span>
+                        <span class="service-duration">⏱ 1 hr</span>
+                    </div>
+                    <div class="service-content">
+                        <div>
+                            <h3>Molecular Bond Therapy</h3>
+                            <p>Bio-active peptide bond rebuild, exfoliating scalp detox, and intensive herbal nourishment designed to reverse breakage and protect your crown.</p>
+                            <div class="service-tags">
+                                <span>Peptide Rebuild</span>
+                                <span>Scalp Detoxification</span>
+                                <span>Follicle Fortify</span>
+                            </div>
                         </div>
                         <div class="service-footer">
                             <span class="price">From $85</span>
-                            <button type="button" class="service-book-btn open-modal-btn" data-service="Bond Treatments" data-price="$85">Reserve</button>
+                            <button type="button" class="service-book-btn open-modal-btn" data-service="Molecular Bond Therapy" data-price="$85">Reserve</button>
                         </div>
                     </div>
                 </div>
@@ -1450,45 +1629,45 @@
                 <p>Explore recent creations from our studio floor. Tap any style to reserve your session.</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item open-modal-btn" data-service="Color & Balayage">
-                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80" alt="Dimensional Balayage" loading="lazy">
+                <div class="gallery-item open-modal-btn" data-service="Precision Stitch Braids">
+                    <img src="images/stitch-braids.jpg" alt="Precision Stitch Braids" loading="lazy">
                     <div class="gallery-overlay">
-                        <h4>Caramel Balayage</h4>
+                        <h4>Precision Stitch Braids</h4>
                         <span>Tap to Book Look ↗</span>
                     </div>
                 </div>
-                <div class="gallery-item open-modal-btn" data-service="Precision Cuts">
-                    <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=600&q=80" alt="Precision Layer Cut" loading="lazy">
+                <div class="gallery-item open-modal-btn" data-service="Bohemian Knotless Braids">
+                    <img src="images/boho-knotless.jpg" alt="Bohemian Knotless Braids" loading="lazy">
                     <div class="gallery-overlay">
-                        <h4>Precision Layering</h4>
+                        <h4>Copper Boho Knotless</h4>
                         <span>Tap to Book Look ↗</span>
                     </div>
                 </div>
-                <div class="gallery-item open-modal-btn" data-service="Color & Balayage">
-                    <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&q=80" alt="Vivid Color" loading="lazy">
+                <div class="gallery-item open-modal-btn" data-service="Bob Box Braids with Gold Cuffs">
+                    <img src="images/bob-box-braids.jpg" alt="Bob Box Braids with Gold Cuffs" loading="lazy">
                     <div class="gallery-overlay">
-                        <h4>Vivid Color</h4>
+                        <h4>Bob Braids & Gold Cuffs</h4>
                         <span>Tap to Book Look ↗</span>
                     </div>
                 </div>
-                <div class="gallery-item open-modal-btn" data-service="Styling & Blowouts">
-                    <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=600&q=80" alt="Bridal Styling" loading="lazy">
+                <div class="gallery-item open-modal-btn" data-service="HD Frontal Wig Installation">
+                    <img src="images/frontal-wig-install.jpg" alt="HD Frontal Wig Installation" loading="lazy">
                     <div class="gallery-overlay">
-                        <h4>Bridal Styling</h4>
+                        <h4>HD Lace Frontal Melt</h4>
                         <span>Tap to Book Look ↗</span>
                     </div>
                 </div>
-                <div class="gallery-item open-modal-btn" data-service="Styling & Blowouts">
-                    <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&q=80" alt="Glass Hair Silk Press" loading="lazy">
+                <div class="gallery-item open-modal-btn" data-service="Copper Butterfly Faux Locs">
+                    <img src="images/copper-faux-locs.jpg" alt="Copper Butterfly Faux Locs" loading="lazy">
                     <div class="gallery-overlay">
-                        <h4>Liquid Silk Press</h4>
+                        <h4>Distressed Copper Locs</h4>
                         <span>Tap to Book Look ↗</span>
                     </div>
                 </div>
-                <div class="gallery-item open-modal-btn" data-service="Precision Cuts">
-                    <img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=600&q=80" alt="Modern Men's Cut" loading="lazy">
+                <div class="gallery-item open-modal-btn" data-service="Sisterlocks & Microlocs Interlocking">
+                    <img src="images/sisterlocks-microlocs.jpg" alt="Sisterlocks & Micro Locs" loading="lazy">
                     <div class="gallery-overlay">
-                        <h4>Modern Sculpt Cut</h4>
+                        <h4>Sisterlocks™ Grid Interlock</h4>
                         <span>Tap to Book Look ↗</span>
                     </div>
                 </div>
@@ -1580,20 +1759,24 @@
             <p>Reserve your appointment online or contact our concierge directly.</p>
             <div class="booking-actions">
                 <button type="button" class="btn open-modal-btn">Instant Online Booking</button>
-                <a href="tel:+15551234567" class="btn btn-outline">Call (555) 123-4567</a>
+                <a href="tel:+447555669628" class="btn btn-outline">Call 07555669628</a>
+                <a href="https://wa.me/447555669628?text=Hello%20Muella,%20I%20would%20like%20to%20book%20a%20hair%20appointment" target="_blank" rel="noopener" class="btn" style="background:#25D366; color:#fff; border-color:#25D366; display:inline-flex; align-items:center; gap:8px;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                    WhatsApp Muella
+                </a>
             </div>
             <div class="contact-info">
                 <div class="contact-item">
-                    <h4>Location</h4>
-                    <p>245 Fashion Ave, Suite 12<br>New York, NY 10001</p>
+                    <h4>Direct Contact</h4>
+                    <p>Phone: <strong>07555669628</strong><br>WhatsApp: <strong>+44 7555 669628</strong></p>
                 </div>
                 <div class="contact-item">
                     <h4>Studio Hours</h4>
-                    <p>Tue–Fri: 9am – 8pm<br>Sat–Sun: 10am – 6pm</p>
+                    <p>Mon–Sat: 9am – 7pm<br>Sunday: By Appointment</p>
                 </div>
                 <div class="contact-item">
-                    <h4>Concierge</h4>
-                    <p>(555) 123-4567<br>hello@luxelocks.studio</p>
+                    <h4>Booking Concierge</h4>
+                    <p>Direct: 07555669628<br>Online Reservation 24/7</p>
                 </div>
             </div>
         </div>
@@ -1629,10 +1812,14 @@
                     <div class="form-row">
                         <label for="book-service">Select Hair Experience</label>
                         <select id="book-service" class="form-control" required>
-                            <option value="Precision Cuts" data-price="$65">Precision Cuts (From $65)</option>
-                            <option value="Color & Balayage" data-price="$120" selected>Color & Balayage (From $120)</option>
-                            <option value="Styling & Blowouts" data-price="$55">Styling & Blowouts (From $55)</option>
-                            <option value="Bond Treatments" data-price="$85">Bond Treatments (From $85)</option>
+                            <option value="Precision Stitch Braids" data-price="$120">Precision Stitch Braids & Edges (From $120)</option>
+                            <option value="Bohemian Knotless Braids" data-price="$180" selected>Bohemian Knotless Braids (From $180)</option>
+                            <option value="Bob Box Braids with Gold Cuffs" data-price="$140">Bob Box Braids with Gold Cuffs (From $140)</option>
+                            <option value="HD Frontal Wig Installation" data-price="$160">HD Frontal Lace Wig Install (From $160)</option>
+                            <option value="Copper Butterfly Faux Locs" data-price="$150">Copper Butterfly Faux Locs (From $150)</option>
+                            <option value="Sisterlocks & Microlocs Interlocking" data-price="$220">Sisterlocks™ & Micro Locs (From $220)</option>
+                            <option value="Liquid Silk Press" data-price="$75">Liquid Silk Press & Steam (From $75)</option>
+                            <option value="Molecular Bond Therapy" data-price="$85">Molecular Bond Therapy (From $85)</option>
                         </select>
                     </div>
 
@@ -1641,9 +1828,9 @@
                             <label for="book-stylist">Master Stylist</label>
                             <select id="book-stylist" class="form-control">
                                 <option value="First Available Master">First Available Master</option>
-                                <option value="Isabella Monroe">Isabella Monroe (Creative Director)</option>
-                                <option value="Marcus Reed">Marcus Reed (Color Specialist)</option>
-                                <option value="Elena Vance">Elena Vance (Texture & Blowouts)</option>
+                                <option value="Muella (Lead Stylist & Master Braider)">Muella (Lead Stylist & Master Braider)</option>
+                                <option value="Amina (Loc Specialist & Sisterlocks Consultant)">Amina (Loc Specialist & Sisterlocks Consultant)</option>
+                                <option value="Zara (HD Frontal & Wig Architect)">Zara (HD Frontal & Wig Architect)</option>
                             </select>
                         </div>
 
