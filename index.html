@@ -1,1521 +1,1937 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ÉLIXIR ATELIER — Haute Coiffure & Bespoke Hair Artistry</title>
-  <meta name="description" content="Experience high-fashion hair architecture, dimensional balayage, precision cutting, luxury silk presses, and bespoke protective styling at Élixir Atelier.">
-  <meta name="theme-color" content="#0A0B0E">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxe Locks Studio — Premium Hair Styling & Haute Color</title>
+    <meta name="description" content="Luxe Locks Studio — Haute coiffure, precision cuts, bespoke balayage, silk presses, and restorative hair treatments in New York City.">
+    
+    <!-- Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Typography: Cormorant Garamond & Plus Jakarta Sans -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  <link rel="stylesheet" href="styles.css">
+        :root {
+            --gold: #c9a96e;
+            --gold-hover: #b89557;
+            --gold-light: #e8d5b0;
+            --gold-soft: rgba(201, 169, 110, 0.12);
+            --gold-gradient: linear-gradient(135deg, #e8d5b0 0%, #c9a96e 50%, #9e7d3b 100%);
+            --dark: #1a1a1a;
+            --darker: #0f0f0f;
+            --light: #f8f6f3;
+            --light-cream: #fbfaf8;
+            --white: #ffffff;
+            --gray: #777777;
+            --gray-light: #e5e5e5;
+            --border-light: rgba(0, 0, 0, 0.08);
+            --border-dark: rgba(255, 255, 255, 0.12);
+            --shadow-sm: 0 4px 15px rgba(0,0,0,0.06);
+            --shadow-md: 0 10px 30px rgba(0,0,0,0.12);
+            --shadow-lg: 0 20px 50px rgba(0,0,0,0.25);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        html { 
+            scroll-behavior: smooth; 
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark);
+            background: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+            padding-bottom: 70px;
+        }
+
+        @media (min-width: 992px) {
+            body { padding-bottom: 0; }
+        }
+
+        h1, h2, h3, h4, .serif { 
+            font-family: 'Playfair Display', serif; 
+            font-weight: 600;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        button, a {
+            font-family: inherit;
+            cursor: pointer;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        /* ================= NAVIGATION ================= */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 22px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        nav.scrolled {
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 4px 25px rgba(0,0,0,0.07);
+            padding: 16px 60px;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.65rem;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 1.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            color: var(--gold);
+            font-size: 1.4rem;
+        }
+
+        nav.scrolled .logo { color: var(--dark); }
+
+        .nav-links {
+            display: flex;
+            gap: 36px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            font-size: 0.92rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        nav.scrolled .nav-links a { color: var(--dark); }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after { width: 100%; }
+
+        .nav-links a:hover { color: var(--gold); }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 24px;
+            background: var(--gold);
+            color: var(--white) !important;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border-radius: 4px;
+            border: 1px solid var(--gold);
+        }
+
+        .nav-cta-btn:hover {
+            background: transparent;
+            color: var(--gold) !important;
+        }
+
+        nav.scrolled .nav-cta-btn {
+            background: var(--dark);
+            border-color: var(--dark);
+            color: var(--white) !important;
+        }
+
+        nav.scrolled .nav-cta-btn:hover {
+            background: var(--gold);
+            border-color: var(--gold);
+        }
+
+        /* Hamburger Button */
+        .hamburger {
+            display: none;
+            background: transparent;
+            border: none;
+            width: 42px;
+            height: 42px;
+            border-radius: 6px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            z-index: 1002;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background-color: var(--white);
+            transition: var(--transition);
+        }
+
+        nav.scrolled .hamburger span { background-color: var(--dark); }
+
+        .hamburger.active span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        /* Mobile Off-Canvas Drawer */
+        .drawer-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(6px);
+            z-index: 1001;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .drawer-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-drawer {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 82%;
+            max-width: 350px;
+            height: 100%;
+            background: var(--darker);
+            color: var(--white);
+            z-index: 1002;
+            padding: 30px 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transform: translateX(100%);
+            transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-shadow: -10px 0 30px rgba(0,0,0,0.4);
+        }
+
+        .mobile-drawer.active {
+            transform: translateX(0);
+        }
+
+        .drawer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-dark);
+        }
+
+        .drawer-nav-list {
+            list-style: none;
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .drawer-nav-list a {
+            color: var(--white);
+            font-size: 1.25rem;
+            font-family: 'Playfair Display', serif;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .drawer-nav-list a:hover { color: var(--gold); }
+
+        .drawer-footer {
+            margin-top: auto;
+            padding-top: 25px;
+            border-top: 1px solid var(--border-dark);
+        }
+
+        .drawer-hours {
+            font-size: 0.82rem;
+            color: #aaa;
+            margin-top: 15px;
+            line-height: 1.6;
+        }
+
+        /* ================= HERO ================= */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, rgba(15,15,15,0.78) 0%, rgba(26,26,26,0.65) 100%),
+                        url('https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1920&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            padding: 120px 20px 80px;
+        }
+
+        .hero-content {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            background: rgba(201, 169, 110, 0.15);
+            border: 1px solid var(--gold);
+            color: var(--gold-light);
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            border-radius: 30px;
+            animation: fadeUp 0.8s ease;
+        }
+
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #10B981;
+            box-shadow: 0 0 10px #10B981;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2.4rem, 6vw, 5rem);
+            font-weight: 700;
+            margin-bottom: 22px;
+            line-height: 1.15;
+            letter-spacing: -0.5px;
+            animation: fadeUp 1s ease;
+        }
+
+        .gold-italic {
+            font-style: italic;
+            color: var(--gold-light);
+            font-weight: 400;
+        }
+
+        .hero-content p {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            font-weight: 300;
+            margin-bottom: 40px;
+            color: #ddd;
+            max-width: 620px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+            animation: fadeUp 1s ease 0.2s both;
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            animation: fadeUp 1s ease 0.4s both;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 16px 38px;
+            background: var(--gold);
+            color: var(--white);
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            border: 2px solid var(--gold);
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: var(--gold);
+            box-shadow: 0 0 25px rgba(201, 169, 110, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--white);
+            color: var(--white);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--dark);
+            border-color: var(--white);
+            box-shadow: none;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ================= SECTION COMMONS ================= */
+        section { padding: 90px 60px; }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .gold-line {
+            width: 50px;
+            height: 2.5px;
+            background: var(--gold);
+            margin: 0 auto 18px;
+        }
+
+        .section-tag {
+            text-transform: uppercase;
+            font-size: 0.78rem;
+            letter-spacing: 2px;
+            color: var(--gold);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            color: var(--dark);
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            color: var(--gray);
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* ================= SERVICES ================= */
+        .services { background: var(--light); }
+
+        .services-filter-bar {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: var(--white);
+            border: 1px solid var(--border-light);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--dark);
+            transition: var(--transition);
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--dark);
+            color: var(--white);
+            border-color: var(--dark);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            text-align: center;
+            transition: var(--transition);
+            border-radius: 4px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: var(--shadow-sm);
+            border-bottom: 3px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-md);
+            border-bottom-color: var(--gold);
+        }
+
+        .service-img-wrap {
+            width: 100%;
+            height: 230px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .service-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .service-card:hover .service-img-wrap img {
+            transform: scale(1.08);
+        }
+
+        .service-content {
+            padding: 28px 24px 30px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
+        }
+
+        .service-card h3 {
+            font-size: 1.45rem;
+            margin-bottom: 12px;
+            color: var(--dark);
+        }
+
+        .service-card p {
+            color: var(--gray);
+            font-size: 0.92rem;
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+
+        .service-footer {
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 15px;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .price {
+            font-weight: 700;
+            color: var(--gold);
+            font-size: 1.15rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .service-book-btn {
+            padding: 8px 18px;
+            background: var(--dark);
+            color: var(--white);
+            font-size: 0.8rem;
+            font-weight: 600;
+            border-radius: 2px;
+            border: 1px solid var(--dark);
+        }
+
+        .service-book-btn:hover {
+            background: var(--gold);
+            border-color: var(--gold);
+            color: var(--white);
+        }
+
+        /* ================= BEFORE & AFTER SLIDER ================= */
+        .transformation-section {
+            background: var(--white);
+            padding: 80px 20px;
+        }
+
+        .ba-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-light);
+        }
+
+        .ba-viewport {
+            position: relative;
+            width: 100%;
+            height: 480px;
+            user-select: none;
+            cursor: ew-resize;
+            overflow: hidden;
+        }
+
+        .ba-image {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+        }
+
+        .ba-overlay-clipped {
+            position: absolute;
+            top: 0; left: 0;
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 2;
+            border-right: 2px solid var(--gold);
+        }
+
+        .ba-overlay-clipped .ba-image {
+            width: 800px; /* Synchronized via JS */
+            max-width: none;
+        }
+
+        .ba-handle {
+            position: absolute;
+            top: 0; bottom: 0;
+            left: 50%;
+            width: 2px;
+            background: var(--gold);
+            z-index: 5;
+            transform: translateX(-50%);
+            pointer-events: none;
+        }
+
+        .ba-handle-knob {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--dark);
+            border: 2px solid var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 0.85rem;
+            pointer-events: auto;
+            cursor: grab;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .ba-handle-knob:active { cursor: grabbing; }
+
+        .ba-pill {
+            position: absolute;
+            top: 15px;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            z-index: 4;
+            backdrop-filter: blur(8px);
+        }
+
+        .ba-pill-before {
+            right: 15px;
+            background: rgba(0,0,0,0.65);
+            color: var(--white);
+        }
+
+        .ba-pill-after {
+            left: 15px;
+            background: rgba(201, 169, 110, 0.9);
+            color: var(--darker);
+        }
+
+        .ba-caption {
+            padding: 20px;
+            background: var(--light);
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        /* ================= GALLERY ================= */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 3/4;
+            cursor: pointer;
+            border-radius: 2px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-item:hover img { transform: scale(1.08); }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(15,15,15,0.7);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .gallery-item:hover .gallery-overlay { opacity: 1; }
+
+        .gallery-overlay h4 {
+            color: var(--white);
+            font-size: 1.4rem;
+            margin-bottom: 6px;
+        }
+
+        .gallery-overlay span {
+            color: var(--gold-light);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ================= ABOUT ================= */
+        .about-section {
+            background: var(--dark);
+            color: var(--white);
+            padding: 100px 60px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-img {
+            position: relative;
+        }
+
+        .about-img img {
+            width: 100%;
+            height: 580px;
+            object-fit: cover;
+            border-radius: 2px;
+        }
+
+        .about-img::after {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            right: -25px;
+            bottom: -25px;
+            border: 2px solid var(--gold);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .about-img img { position: relative; z-index: 1; }
+
+        .about-content h2 {
+            font-size: clamp(2.2rem, 4vw, 2.9rem);
+            margin-bottom: 22px;
+            line-height: 1.2;
+        }
+
+        .about-content p {
+            color: #bbb;
+            margin-bottom: 18px;
+            line-height: 1.8;
+            font-size: 0.98rem;
+        }
+
+        .stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 35px;
+            padding-top: 25px;
+            border-top: 1px solid var(--border-dark);
+            flex-wrap: wrap;
+        }
+
+        .stat h3 {
+            font-size: 2.6rem;
+            color: var(--gold);
+            margin-bottom: 2px;
+        }
+
+        .stat p {
+            color: #888;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0;
+        }
+
+        /* ================= TESTIMONIALS ================= */
+        .testimonials { background: var(--light); }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 40px 35px;
+            position: relative;
+            border-radius: 4px;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .testimonial-card::before {
+            content: '“';
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            color: var(--gold);
+            opacity: 0.25;
+            position: absolute;
+            top: 10px;
+            left: 25px;
+            line-height: 1;
+        }
+
+        .testimonial-card p {
+            color: #555;
+            font-style: italic;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+            line-height: 1.7;
+            font-size: 0.96rem;
+        }
+
+        .client {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .client-img {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--gold);
+        }
+
+        .client-info h4 {
+            font-size: 1.05rem;
+            color: var(--dark);
+            margin-bottom: 2px;
+        }
+
+        .client-info span {
+            font-size: 0.82rem;
+            color: var(--gold);
+            font-weight: 500;
+        }
+
+        /* ================= BOOKING CALLOUT ================= */
+        .booking {
+            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 100px 30px;
+            position: relative;
+        }
+
+        .booking h2 {
+            font-size: clamp(2.2rem, 4vw, 3rem);
+            margin-bottom: 15px;
+        }
+
+        .booking p {
+            color: var(--gold-light);
+            margin-bottom: 35px;
+            font-size: 1.15rem;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .booking-actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-dark);
+            flex-wrap: wrap;
+        }
+
+        .contact-item h4 {
+            color: var(--gold);
+            margin-bottom: 8px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .contact-item p {
+            color: #ddd;
+            font-size: 0.95rem;
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
+        /* ================= FOOTER ================= */
+        footer {
+            background: var(--darker);
+            color: #777;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.88rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+        footer a { color: var(--gold); }
+        footer a:hover { text-decoration: underline; }
+
+        /* ================= STICKY MOBILE BAR ================= */
+        .sticky-mobile-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(15, 15, 15, 0.96);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-top: 1px solid var(--border-dark);
+            padding: 10px 20px max(10px, env(safe-area-inset-bottom));
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 990;
+        }
+
+        @media (min-width: 992px) {
+            .sticky-mobile-bar { display: none; }
+        }
+
+        .mobile-bar-info strong {
+            display: block;
+            color: var(--white);
+            font-size: 0.9rem;
+        }
+
+        .mobile-bar-info span {
+            color: var(--gold);
+            font-size: 0.75rem;
+        }
+
+        .mobile-bar-btn {
+            background: var(--gold);
+            color: var(--white);
+            padding: 10px 22px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: 2px;
+            border: 1px solid var(--gold);
+        }
+
+        /* ================= INTERACTIVE BOOKING MODAL ================= */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.75);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .modal-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-card {
+            background: var(--white);
+            width: 100%;
+            max-width: 640px;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            transform: translateY(20px);
+            transition: transform 0.35s ease;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-overlay.open .modal-card {
+            transform: translateY(0);
+        }
+
+        .modal-header {
+            padding: 20px 25px;
+            background: var(--dark);
+            color: var(--white);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h3 {
+            font-size: 1.35rem;
+            color: var(--gold-light);
+        }
+
+        .modal-close-btn {
+            background: transparent;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .modal-body {
+            padding: 25px;
+            overflow-y: auto;
+        }
+
+        .form-row {
+            margin-bottom: 18px;
+        }
+
+        .form-row label {
+            display: block;
+            font-size: 0.82rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--dark);
+            margin-bottom: 6px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid var(--gray-light);
+            border-radius: 3px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            color: var(--dark);
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .form-control:focus {
+            border-color: var(--gold);
+        }
+
+        .form-grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .time-slots {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+            gap: 8px;
+            margin-top: 6px;
+        }
+
+        .slot-btn {
+            background: var(--light);
+            border: 1px solid var(--border-light);
+            padding: 8px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border-radius: 3px;
+            color: var(--dark);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .slot-btn:hover,
+        .slot-btn.selected {
+            background: var(--gold);
+            color: var(--white);
+            border-color: var(--gold);
+        }
+
+        .modal-footer-nav {
+            padding: 15px 25px;
+            background: var(--light);
+            border-top: 1px solid var(--border-light);
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+
+        /* Success Card in Modal */
+        .booking-success-view {
+            text-align: center;
+            padding: 20px 10px;
+            display: none;
+        }
+
+        .success-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--gold-soft);
+            color: var(--gold);
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            border: 1px solid var(--gold);
+        }
+
+        .ref-badge {
+            display: inline-block;
+            background: var(--light);
+            border: 1px dashed var(--gold);
+            padding: 6px 14px;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin: 15px 0 20px;
+            letter-spacing: 1px;
+        }
+
+        .cal-actions {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        /* ================= RESPONSIVE MEDIA QUERIES ================= */
+        @media (max-width: 992px) {
+            nav { padding: 18px 30px; }
+            nav.scrolled { padding: 14px 30px; }
+            section { padding: 75px 30px; }
+            .about-section { padding: 75px 30px; }
+            .about-grid { grid-template-columns: 1fr; gap: 40px; }
+            .about-img img { height: 420px; }
+            .about-img::after { display: none; }
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 14px 20px; }
+            nav.scrolled { padding: 12px 20px; }
+            .nav-links { display: none; }
+            .nav-cta-btn { display: none; }
+            .hamburger { display: flex; }
+            
+            section { padding: 60px 20px; }
+            .about-section { padding: 60px 20px; }
+            
+            .hero-content h1 { font-size: 2.6rem; }
+            .hero-actions .btn { width: 100%; }
+
+            .ba-viewport { height: 380px; }
+            .ba-caption { flex-direction: column; text-align: center; }
+            .ba-caption .btn { width: 100%; }
+
+            .contact-info { gap: 30px; }
+            .contact-item { width: 100%; text-align: center; }
+
+            /* Mobile Bottom Sheet Modal */
+            .modal-overlay {
+                padding: 0;
+                align-items: flex-end;
+            }
+            .modal-card {
+                max-width: 100%;
+                border-radius: 20px 20px 0 0;
+                max-height: 94vh;
+                transform: translateY(100%);
+            }
+            .form-grid-2 { grid-template-columns: 1fr; }
+            .form-control { font-size: 16px !important; } /* Prevents iOS auto-zoom */
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 { font-size: 2.2rem; }
+            .section-header h2 { font-size: 1.85rem; }
+            .stats { gap: 20px; }
+            .stat h3 { font-size: 2rem; }
+            .testimonial-card { padding: 30px 20px; }
+        }
+    </style>
 </head>
 <body>
 
-  <!-- ================= HEADER & NAVIGATION ================= -->
-  <header class="site-header" id="header">
-    <div class="nav-container">
-      <a href="#hero" class="brand-logo" aria-label="Élixir Atelier Home">
-        <div class="brand-monogram">É</div>
-        <div class="brand-text">
-          <span class="brand-title">ÉLIXIR</span>
-          <span class="brand-subtitle">ATELIER</span>
-        </div>
-      </a>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <a href="#home" class="logo">
+            <span class="logo-icon">✦</span> Luxe Locks
+        </a>
 
-      <nav aria-label="Main Navigation">
         <ul class="nav-links">
-          <li><a href="#transformations">Transformations</a></li>
-          <li><a href="#diagnostic">Hair Diagnostic</a></li>
-          <li><a href="#services">Services & Pricing</a></li>
-          <li><a href="#atelier">The Atelier</a></li>
-          <li><a href="#lookbook">Lookbook</a></li>
-          <li><a href="#stylists">Stylists</a></li>
-          <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#transformation">Results</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
         </ul>
-      </nav>
 
-      <div class="nav-actions">
-        <!-- Ambient Soundscape Toggle Button -->
-        <button type="button" class="btn btn-icon-glass soundscape-toggle-btn" id="soundscape-nav-btn" title="Toggle Atelier Ambient Soundscape" aria-label="Toggle Atelier Ambient Soundscape">
-          <span class="sound-icon">♫</span>
-          <span class="sound-text">Atmosphere</span>
-        </button>
-
-        <!-- Client & Admin Portal Button -->
-        <button type="button" class="btn btn-outline btn-sm" id="portal-open-btn">
-          <span>Atelier Portal</span>
-        </button>
-
-        <!-- Booking CTA -->
-        <button type="button" class="btn btn-primary btn-sm open-booking-btn" id="nav-book-btn">
-          <span>Book Appointment</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </button>
-
-        <button type="button" class="hamburger-btn" id="mobile-menu-open" aria-label="Open mobile menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <!-- Mobile Off-Canvas Drawer -->
-  <div class="mobile-drawer-overlay" id="drawer-overlay"></div>
-  <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation Menu">
-    <div class="drawer-header">
-      <div class="brand-logo">
-        <div class="brand-monogram">É</div>
-        <div class="brand-text">
-          <span class="brand-title">ÉLIXIR</span>
-          <span class="brand-subtitle">ATELIER</span>
+        <div class="nav-actions">
+            <button type="button" class="nav-cta-btn open-modal-btn" data-service="Precision Cuts">
+                <span>Book Appointment</span>
+            </button>
+            <button type="button" class="hamburger" id="hamburger-btn" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-      </div>
-      <button type="button" class="drawer-close" id="mobile-menu-close" aria-label="Close menu">✕</button>
-    </div>
+    </nav>
 
-    <ul class="drawer-nav-list">
-      <li><a href="#transformations" class="drawer-link">Transformations <span>→</span></a></li>
-      <li><a href="#diagnostic" class="drawer-link">AI Hair Diagnostic <span>→</span></a></li>
-      <li><a href="#services" class="drawer-link">Services & Pricing <span>→</span></a></li>
-      <li><a href="#customizer" class="drawer-link">Package Customizer <span>→</span></a></li>
-      <li><a href="#atelier" class="drawer-link">The Atelier Experience <span>→</span></a></li>
-      <li><a href="#lookbook" class="drawer-link">Curated Lookbook <span>→</span></a></li>
-      <li><a href="#stylists" class="drawer-link">Master Stylists <span>→</span></a></li>
-      <li><a href="#reviews" class="drawer-link">Client Reviews <span>→</span></a></li>
-      <li><a href="#portal" class="drawer-link" id="mobile-portal-link">Client & Staff Portal <span>→</span></a></li>
-    </ul>
+    <!-- Mobile Navigation Drawer -->
+    <div class="drawer-overlay" id="drawer-overlay"></div>
+    <aside class="mobile-drawer" id="mobile-drawer">
+        <div class="drawer-header">
+            <div class="logo"><span class="logo-icon">✦</span> Luxe Locks</div>
+            <button type="button" class="modal-close-btn" id="drawer-close-btn">✕</button>
+        </div>
+        <ul class="drawer-nav-list">
+            <li><a href="#home" class="drawer-link">Home <span>→</span></a></li>
+            <li><a href="#services" class="drawer-link">Services & Pricing <span>→</span></a></li>
+            <li><a href="#transformation" class="drawer-link">Before & After <span>→</span></a></li>
+            <li><a href="#gallery" class="drawer-link">Hair Gallery <span>→</span></a></li>
+            <li><a href="#about" class="drawer-link">Our Story <span>→</span></a></li>
+            <li><a href="#testimonials" class="drawer-link">Client Reviews <span>→</span></a></li>
+        </ul>
+        <div class="drawer-footer">
+            <button type="button" class="btn open-modal-btn" style="width: 100%; text-align: center;">Book Session Now</button>
+            <div class="drawer-hours">
+                <p>📍 245 Fashion Ave, Suite 12, NYC</p>
+                <p>📞 (555) 123-4567 • Mon–Sun</p>
+            </div>
+        </div>
+    </aside>
 
-    <div class="drawer-footer">
-      <button type="button" class="btn btn-primary open-booking-btn" style="width: 100%; margin-bottom: 0.75rem;">
-        Book Session Now
-      </button>
-      <button type="button" class="btn btn-outline soundscape-toggle-btn" style="width: 100%;">
-        <span>♫ Toggle Ambient Soundscape</span>
-      </button>
-      <div class="drawer-hours">
-        <p><strong>Studio Hours:</strong> Tue – Sun: 9:00 AM – 8:00 PM</p>
-        <p>📍 450 Madison Avenue, New York, NY</p>
-      </div>
-    </div>
-  </aside>
-
-  <main>
-    <!-- ================= HERO SECTION ================= -->
-    <section class="hero-section" id="hero">
-      <div class="container">
-        <div class="hero-grid">
-          <div class="hero-content">
-            <span class="badge-tag">
-              <span class="pulse-dot"></span>
-              Accepting Appointments For 2026
-            </span>
-            <h1 class="hero-title">
-              Sculpting Confidence Through <span class="gold-text">Bespoke Hair Artistry</span>
-            </h1>
-            <p class="hero-lead">
-              Where Parisian coiffure craftsmanship meets modern hair architecture. Experience dimensional balayage, silk glass blowouts, precision haircuts, and protective mastery tailored to your signature beauty.
-            </p>
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="pulse-dot"></span> Accepting New Clients for 2026
+            </div>
+            <h1>Where Style<br><span class="gold-italic">Meets Artistry</span></h1>
+            <p>High-fashion hair architecture, bespoke dimensional color, and couture styling in the heart of Manhattan.</p>
             <div class="hero-actions">
-              <button type="button" class="btn btn-primary open-booking-btn" id="hero-book-btn">
-                <span>Reserve Your Experience</span>
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </button>
-              <a href="#diagnostic" class="btn btn-outline">
-                <span>Hair Diagnostic Quiz ✨</span>
-              </a>
+                <button type="button" class="btn open-modal-btn">Book Appointment</button>
+                <a href="#services" class="btn btn-outline">Explore Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <div class="gold-line"></div>
+                <span class="section-tag">Couture Menu</span>
+                <h2>Our Bespoke Services</h2>
+                <p>From precision dry-cutting to transformative dimensional balayage, we tailor every formula to your bone structure and hair health.</p>
             </div>
 
-            <div class="hero-stats-row">
-              <div class="stat-item">
-                <span class="stat-num">4.98★</span>
-                <span class="stat-label">Client Rating</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-num">3,200+</span>
-                <span class="stat-label">Transformations</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-num">100%</span>
-                <span class="stat-label">Cruelty-Free Care</span>
-              </div>
+            <!-- Filter Buttons -->
+            <div class="services-filter-bar">
+                <button type="button" class="filter-btn active" data-filter="all">All Services</button>
+                <button type="button" class="filter-btn" data-filter="cuts">Cuts & Shape</button>
+                <button type="button" class="filter-btn" data-filter="color">Color & Balayage</button>
+                <button type="button" class="filter-btn" data-filter="styling">Styling</button>
+                <button type="button" class="filter-btn" data-filter="treatments">Treatments</button>
             </div>
-          </div>
 
-          <div class="hero-visual">
-            <div class="hero-image-wrapper">
-              <img src="images/hero.jpg" alt="Élixir Atelier luxury salon client with voluminous honey balayage waves" width="1280" height="880" loading="eager">
-              <div class="hero-floating-pill">
-                <div class="floating-pill-info">
-                  <div class="floating-pill-avatar">
-                    <img src="images/stylist.jpg" alt="Master Stylist Camille">
-                  </div>
-                  <div>
-                    <div class="floating-pill-name">Camille Laurent</div>
-                    <div class="floating-pill-status">
-                      <span class="pulse-dot"></span> In Atelier Today • 3 Slots Open
+            <div class="services-grid" id="services-grid">
+                <!-- Card 1 -->
+                <div class="service-card" data-category="cuts">
+                    <div class="service-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=600&q=80" alt="Precision Haircut" loading="lazy">
                     </div>
-                  </div>
+                    <div class="service-content">
+                        <div>
+                            <h3>Precision Cuts</h3>
+                            <p>Sculptural cuts mapped to your natural growth patterns and lifestyle. Includes botanical shampoo & blowout.</p>
+                        </div>
+                        <div class="service-footer">
+                            <span class="price">From $65</span>
+                            <button type="button" class="service-book-btn open-modal-btn" data-service="Precision Cuts" data-price="$65">Reserve</button>
+                        </div>
+                    </div>
                 </div>
-                <button type="button" class="btn btn-outline btn-sm open-booking-btn" data-stylist="Camille Laurent">
-                  Book
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- ================= BEFORE & AFTER INTERACTIVE TRANSFORMATION ================= -->
-    <section class="transformation-section" id="transformations">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label">Real Results</span>
-          <h2 class="section-title">The Power of <span class="gold-text">Transformation</span></h2>
-          <p class="section-sub">Drag the gold divider left and right to witness the radiance, silk finish, and dimensional depth created by our master colorists.</p>
-        </div>
-
-        <div class="ba-slider-container">
-          <div class="ba-viewport" id="ba-viewport">
-            <!-- Background Image: BEFORE -->
-            <img src="images/before.jpg" alt="Hair before balayage transformation" class="ba-image">
-            <span class="ba-tag ba-tag-before">Before (Dry / Faded Ends)</span>
-
-            <!-- Clipped Overlay Image: AFTER -->
-            <div class="ba-after-wrapper" id="ba-after-wrapper">
-              <img src="images/after.jpg" alt="Hair after luxury honey balayage transformation" class="ba-image">
-              <span class="ba-tag ba-tag-after">After (Honey Balayage & Glaze)</span>
-            </div>
-
-            <!-- Draggable Divider Line & Handle -->
-            <div class="ba-handle" id="ba-handle">
-              <div class="ba-handle-btn" aria-label="Drag slider to compare before and after">
-                <span>◄ ►</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="ba-footer-card">
-            <div class="ba-details">
-              <h4>Signature Caramel Honey Balayage & Bond Therapy</h4>
-              <p>Completed in 2 hrs 45 mins • Includes Scalp Ritual, Fiber Clinix Bond Rebuilder & Silk Blowout</p>
-            </div>
-            <button type="button" class="btn btn-primary open-booking-btn" data-service="Caramel Honey Balayage & Glaze">
-              <span>Book This Transformation</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= THE ÉLIXIR HAIR DIAGNOSTIC CONCIERGE ================= -->
-    <section class="diagnostic-section" id="diagnostic">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label">Virtual Concierge</span>
-          <h2 class="section-title">The Élixir <span class="gold-text">Hair Diagnostic</span></h2>
-          <p class="section-sub">Discover your personalized salon prescription, matched master stylist, and time investment in 60 seconds.</p>
-        </div>
-
-        <div class="diagnostic-card">
-          <!-- Diagnostic Stepper -->
-          <div class="quiz-stepper">
-            <div class="quiz-step active" data-step="1">1. Texture & Pattern</div>
-            <div class="quiz-step" data-step="2">2. Current State</div>
-            <div class="quiz-step" data-step="3">3. Transformation Goal</div>
-            <div class="quiz-step" data-step="4">4. Maintenance Level</div>
-          </div>
-
-          <!-- Step 1: Hair Texture -->
-          <div class="quiz-step-pane active" id="quiz-pane-1">
-            <h3 class="quiz-question-title">What is your natural hair texture and density?</h3>
-            <div class="quiz-options-grid">
-              <div class="quiz-option" data-name="texture" data-value="straight-wavy">
-                <div class="option-icon">✨</div>
-                <h5>Straight to Gentle Waves</h5>
-                <p>Type 1A - 2B • Fine to medium density, seeks body and dimensional shine.</p>
-              </div>
-              <div class="quiz-option" data-name="texture" data-value="curly">
-                <div class="option-icon">🌀</div>
-                <h5>Defined Curls & Ringlets</h5>
-                <p>Type 3A - 3C • Medium to high density, craves moisture and frizz control.</p>
-              </div>
-              <div class="quiz-option" data-name="texture" data-value="coily">
-                <div class="option-icon">👑</div>
-                <h5>Coily, Kinky & Afro Texture</h5>
-                <p>Type 4A - 4C • High density, loves protective knotless styling & liquid silk presses.</p>
-              </div>
-              <div class="quiz-option" data-name="texture" data-value="fine-fragile">
-                <div class="option-icon">🌸</div>
-                <h5>Fine, Fragile or Thinning</h5>
-                <p>Delicate strand structure needing gentle bond repair and non-stripping organic formulations.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Step 2: Current Condition -->
-          <div class="quiz-step-pane" id="quiz-pane-2">
-            <h3 class="quiz-question-title">How would you describe your hair's current condition?</h3>
-            <div class="quiz-options-grid">
-              <div class="quiz-option" data-name="condition" data-value="virgin">
-                <div class="option-icon">🌿</div>
-                <h5>Virgin / Natural</h5>
-                <p>No recent chemical dyes, bleach, or relaxers in the last 12 months.</p>
-              </div>
-              <div class="quiz-option" data-name="condition" data-value="colored">
-                <div class="option-icon">🎨</div>
-                <h5>Color-Treated / Bleached</h5>
-                <p>Existing highlights, balayage, or single process color needing gloss refresh.</p>
-              </div>
-              <div class="quiz-option" data-name="condition" data-value="damaged">
-                <div class="option-icon">⚡</div>
-                <h5>Heat or Chemical Distress</h5>
-                <p>Split ends, dryness, or elasticity loss requiring molecular bond rebuilding.</p>
-              </div>
-              <div class="quiz-option" data-name="condition" data-value="dry-transitioning">
-                <div class="option-icon">💧</div>
-                <h5>Dry / Transitioning</h5>
-                <p>In between textures, craving intensive botanical steam hydration therapy.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Step 3: Desired Goal -->
-          <div class="quiz-step-pane" id="quiz-pane-3">
-            <h3 class="quiz-question-title">What is your primary transformation vision?</h3>
-            <div class="quiz-options-grid">
-              <div class="quiz-option" data-name="goal" data-value="balayage">
-                <div class="option-icon">✨</div>
-                <h5>Sun-Kissed Dimensional Balayage</h5>
-                <p>Natural French hand-painted ribbons with gloss glaze and runway blowout.</p>
-              </div>
-              <div class="quiz-option" data-name="goal" data-value="silkpress">
-                <div class="option-icon">🪞</div>
-                <h5>Mirror-Shine Liquid Silk Press</h5>
-                <p>Chemical-free glass hair straightening with full natural curl pattern preservation.</p>
-              </div>
-              <div class="quiz-option" data-name="goal" data-value="braids">
-                <div class="option-icon">💫</div>
-                <h5>Bohemian Knotless Braids</h5>
-                <p>Featherweight protective styling with human hair curls and regal gold cuffs.</p>
-              </div>
-              <div class="quiz-option" data-name="goal" data-value="cut-repair">
-                <div class="option-icon">✂️</div>
-                <h5>Architectural Cut & Molecular Repair</h5>
-                <p>Face-framing silhouette cut paired with K18 peptide bond therapy.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Step 4: Maintenance -->
-          <div class="quiz-step-pane" id="quiz-pane-4">
-            <h3 class="quiz-question-title">What is your ideal salon maintenance cadence?</h3>
-            <div class="quiz-options-grid">
-              <div class="quiz-option" data-name="maintenance" data-value="low">
-                <div class="option-icon">⏳</div>
-                <h5>Low Maintenance (3–5 Months)</h5>
-                <p>Grows out seamlessly with no harsh root line or frequent salon visits.</p>
-              </div>
-              <div class="quiz-option" data-name="maintenance" data-value="medium">
-                <div class="option-icon">📅</div>
-                <h5>Seasonal Refresh (6–8 Weeks)</h5>
-                <p>Love keeping gloss tones, protective styles, and trims crisp and elevated.</p>
-              </div>
-              <div class="quiz-option" data-name="maintenance" data-value="high">
-                <div class="option-icon">🥂</div>
-                <h5>VIP Regular (2–4 Weeks)</h5>
-                <p>Weekly luxury blowouts, steam treatments, and immaculate styling maintenance.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Result Card (Generated Dynamically) -->
-          <div class="quiz-result-card" id="quiz-result-card" style="display: none;">
-            <div class="result-header">
-              <span class="badge-tag">✦ Customized Atelier Prescription</span>
-              <h3 id="result-regimen-title" class="result-title">Caramel Honey Balayage & Molecular Bond Therapy</h3>
-              <p id="result-regimen-desc" class="result-desc">A French free-hand balayage customized with high-gloss acidifying toner, Olaplex bond repair shield, and runway blowout.</p>
-            </div>
-
-            <div class="result-specs-grid">
-              <div class="spec-box">
-                <span class="spec-label">Matched Master Stylist</span>
-                <strong id="result-stylist-name">Camille Laurent</strong>
-                <span class="spec-sub" id="result-stylist-title">Color & Balayage Director</span>
-              </div>
-              <div class="spec-box">
-                <span class="spec-label">Recommended Add-On</span>
-                <strong id="result-addon-name">Botanical Gloss Glaze</strong>
-                <span class="spec-sub">Protects cuticle & adds 8-week shine</span>
-              </div>
-              <div class="spec-box">
-                <span class="spec-label">Estimated Duration</span>
-                <strong id="result-duration">160 Minutes</strong>
-                <span class="spec-sub">Includes scalp ritual & blowout</span>
-              </div>
-              <div class="spec-box">
-                <span class="spec-label">Estimated Investment</span>
-                <strong class="gold-text" id="result-price" style="font-size: 1.4rem;">$240</strong>
-                <span class="spec-sub">Transparent pricing</span>
-              </div>
-            </div>
-
-            <div class="result-actions">
-              <button type="button" class="btn btn-primary" id="book-quiz-prescription-btn">
-                <span>Book This Custom Prescription</span>
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </button>
-              <button type="button" class="btn btn-outline" id="retake-quiz-btn">
-                ↻ Retake Diagnostic
-              </button>
-            </div>
-          </div>
-
-          <!-- Stepper Buttons -->
-          <div class="quiz-nav-footer" id="quiz-nav-footer">
-            <button type="button" class="btn btn-outline btn-sm" id="quiz-prev-btn" style="visibility: hidden;">
-              ← Back
-            </button>
-            <button type="button" class="btn btn-primary btn-sm" id="quiz-next-btn">
-              <span>Next Question</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= SERVICES & TRANSPARENT PRICING ================= -->
-    <section class="services-section" id="services">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label">Menu & Rates</span>
-          <h2 class="section-title">Bespoke <span class="gold-text">Service Menu</span></h2>
-          <p class="section-sub">Transparent pricing with zero hidden fees. Every service includes our signature botanical scalp massage and artisanal refreshment bar.</p>
-        </div>
-
-        <!-- Filter Tabs -->
-        <div class="category-tabs" role="tablist">
-          <button type="button" class="tab-btn active" data-category="all">All Services</button>
-          <button type="button" class="tab-btn" data-category="color">Color & Balayage</button>
-          <button type="button" class="tab-btn" data-category="cuts">Precision Cuts & Styling</button>
-          <button type="button" class="tab-btn" data-category="silkpress">Silk Press & Texture</button>
-          <button type="button" class="tab-btn" data-category="braids">Protective & Braids</button>
-          <button type="button" class="tab-btn" data-category="treatments">Bond Treatments</button>
-        </div>
-
-        <!-- Services Grid -->
-        <div class="services-grid" id="services-grid">
-
-          <!-- Card 1 -->
-          <div class="service-card" data-category="color">
-            <div>
-              <div class="service-top">
-                <span class="service-category">Color & Balayage</span>
-                <span class="service-duration">⏱ 160 mins</span>
-              </div>
-              <h3 class="service-title">Caramel Honey Balayage & Glaze</h3>
-              <p class="service-desc">Hand-painted French balayage creating multidimensional radiance tailored to your facial contours and complexion.</p>
-              <ul class="service-perks">
-                <li>Bond-building Olaplex protection</li>
-                <li>Customized gloss toning glaze</li>
-                <li>Signature blowout & barrel wave finish</li>
-              </ul>
-            </div>
-            <div class="service-footer">
-              <div class="service-price">
-                <span class="price-prefix">Investment</span>
-                <span class="price-value">$240</span>
-              </div>
-              <button type="button" class="btn btn-outline btn-sm open-booking-btn" data-service="Caramel Honey Balayage & Glaze" data-price="$240" data-duration="160 mins">
-                Reserve
-              </button>
-            </div>
-          </div>
-
-          <!-- Card 2 -->
-          <div class="service-card" data-category="cuts">
-            <div>
-              <div class="service-top">
-                <span class="service-category">Cuts & Styling</span>
-                <span class="service-duration">⏱ 75 mins</span>
-              </div>
-              <h3 class="service-title">Architectural Precision Haircut</h3>
-              <p class="service-desc">Sculptural dry or wet cut mapped to your hair’s natural growth patterns, texture, and everyday lifestyle maintenance.</p>
-              <ul class="service-perks">
-                <li>Detailed consultation & shape analysis</li>
-                <li>Botanical scalp exfoliation wash</li>
-                <li>Voluminous runway blowout</li>
-              </ul>
-            </div>
-            <div class="service-footer">
-              <div class="service-price">
-                <span class="price-prefix">Investment</span>
-                <span class="price-value">$110</span>
-              </div>
-              <button type="button" class="btn btn-outline btn-sm open-booking-btn" data-service="Architectural Precision Haircut" data-price="$110" data-duration="75 mins">
-                Reserve
-              </button>
-            </div>
-          </div>
-
-          <!-- Card 3 -->
-          <div class="service-card" data-category="silkpress">
-            <div>
-              <div class="service-top">
-                <span class="service-category">Silk Press & Texture</span>
-                <span class="service-duration">⏱ 110 mins</span>
-              </div>
-              <h3 class="service-title">Liquid Glass Silk Press Ritual</h3>
-              <p class="service-desc">High-shine, lightweight straightening without chemical alteration. Leaves curls completely intact with mirror-like fluidity.</p>
-              <ul class="service-perks">
-                <li>Hydrating steam deep conditioning</li>
-                <li>Heat-activated diamond shield</li>
-                <li>Split-end feather trimming</li>
-              </ul>
-            </div>
-            <div class="service-footer">
-              <div class="service-price">
-                <span class="price-prefix">Investment</span>
-                <span class="price-value">$135</span>
-              </div>
-              <button type="button" class="btn btn-outline btn-sm open-booking-btn" data-service="Liquid Glass Silk Press Ritual" data-price="$135" data-duration="110 mins">
-                Reserve
-              </button>
-            </div>
-          </div>
-
-          <!-- Card 4 -->
-          <div class="service-card" data-category="braids">
-            <div>
-              <div class="service-top">
-                <span class="service-category">Protective & Braids</span>
-                <span class="service-duration">⏱ 210 mins</span>
-              </div>
-              <h3 class="service-title">Bohemian Goddess Knotless Braids</h3>
-              <p class="service-desc">Featherlight, tension-free knotless braids infused with wavy human hair curls and optional gold filigree cuffs.</p>
-              <ul class="service-perks">
-                <li>Zero-tension scalp friendly technique</li>
-                <li>Hydrating rosewater scalp spritz</li>
-                <li>Complimentary gold cuffs styling</li>
-              </ul>
-            </div>
-            <div class="service-footer">
-              <div class="service-price">
-                <span class="price-prefix">Investment</span>
-                <span class="price-value">$280</span>
-              </div>
-              <button type="button" class="btn btn-outline btn-sm open-booking-btn" data-service="Bohemian Goddess Knotless Braids" data-price="$280" data-duration="210 mins">
-                Reserve
-              </button>
-            </div>
-          </div>
-
-          <!-- Card 5 -->
-          <div class="service-card" data-category="color">
-            <div>
-              <div class="service-top">
-                <span class="service-category">Color & Balayage</span>
-                <span class="service-duration">⏱ 120 mins</span>
-              </div>
-              <h3 class="service-title">Full Dimension All-Over Gloss & Color</h3>
-              <p class="service-desc">Rich, deep espresso, chocolate velvet, or luminous copper transformation with high-definition light reflection.</p>
-              <ul class="service-perks">
-                <li>Ammonia-free organic color formula</li>
-                <li>Post-color acidifying moisture mask</li>
-                <li>Velvet blowout styling</li>
-              </ul>
-            </div>
-            <div class="service-footer">
-              <div class="service-price">
-                <span class="price-prefix">Investment</span>
-                <span class="price-value">$175</span>
-              </div>
-              <button type="button" class="btn btn-outline btn-sm open-booking-btn" data-service="Full Dimension All-Over Gloss & Color" data-price="$175" data-duration="120 mins">
-                Reserve
-              </button>
-            </div>
-          </div>
-
-          <!-- Card 6 -->
-          <div class="service-card" data-category="treatments">
-            <div>
-              <div class="service-top">
-                <span class="service-category">Bond Treatments</span>
-                <span class="service-duration">⏱ 90 mins</span>
-              </div>
-              <h3 class="service-title">K18 Molecular Peptide & Scalp Detox</h3>
-              <p class="service-desc">Reverses chemical and thermal damage at the molecular polypeptide chain level, restoring virgin hair strength and elasticity.</p>
-              <ul class="service-perks">
-                <li>Micromist steam therapy</li>
-                <li>Aromatherapeutic head & neck massage</li>
-                <li>Leave-in protective molecular barrier</li>
-              </ul>
-            </div>
-            <div class="service-footer">
-              <div class="service-price">
-                <span class="price-prefix">Investment</span>
-                <span class="price-value">$95</span>
-              </div>
-              <button type="button" class="btn btn-outline btn-sm open-booking-btn" data-service="K18 Molecular Peptide & Scalp Detox" data-price="$95" data-duration="90 mins">
-                Reserve
-              </button>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= BESPOKE PACKAGE CUSTOMIZER & LIVE ESTIMATOR ================= -->
-    <section class="customizer-section" id="customizer">
-      <div class="container">
-        <div class="customizer-grid">
-          <div class="customizer-intro">
-            <span class="section-label">Live Estimator</span>
-            <h2 class="section-title">Design Your <span class="gold-text">Signature Package</span></h2>
-            <p class="hero-lead">
-              Pair your primary service with luxury restorative enhancements. Watch your estimated appointment duration and investment update live in real time.
-            </p>
-            <div class="customizer-service-select">
-              <label for="customizer-base-select">Select Primary Experience:</label>
-              <select id="customizer-base-select" class="form-select">
-                <option value="balayage" data-price="240" data-time="160" data-name="Caramel Honey Balayage & Glaze">Caramel Honey Balayage & Glaze ($240 • 160 mins)</option>
-                <option value="cut" data-price="110" data-time="75" data-name="Architectural Precision Haircut">Architectural Precision Haircut ($110 • 75 mins)</option>
-                <option value="silkpress" data-price="135" data-time="110" data-name="Liquid Glass Silk Press Ritual">Liquid Glass Silk Press Ritual ($135 • 110 mins)</option>
-                <option value="braids" data-price="280" data-time="210" data-name="Bohemian Goddess Knotless Braids">Bohemian Goddess Knotless Braids ($280 • 210 mins)</option>
-                <option value="gloss" data-price="175" data-time="120" data-name="Full Dimension All-Over Gloss & Color">Full Dimension All-Over Gloss & Color ($175 • 120 mins)</option>
-                <option value="k18" data-price="95" data-time="90" data-name="K18 Molecular Peptide & Scalp Detox">K18 Molecular Peptide & Scalp Detox ($95 • 90 mins)</option>
-              </select>
-            </div>
-
-            <div class="addon-checklist">
-              <span class="addon-heading">Curated Atelier Enhancements & Add-Ons:</span>
-
-              <label class="addon-checkbox-label">
-                <input type="checkbox" class="customizer-addon" data-id="gloss" data-name="Botanical Gloss Glaze" data-price="45" data-time="20">
-                <span class="checkbox-custom"></span>
-                <span class="addon-info">
-                  <span class="addon-title">Botanical High-Gloss Glaze (+ $45 • 20 mins)</span>
-                  <span class="addon-sub">Seals the cuticle, boosts shine & eliminates brassiness</span>
-                </span>
-              </label>
-
-              <label class="addon-checkbox-label">
-                <input type="checkbox" class="customizer-addon" data-id="olaplex" data-name="Olaplex No.1/No.2 Molecular Bond Shield" data-price="60" data-time="25">
-                <span class="checkbox-custom"></span>
-                <span class="addon-info">
-                  <span class="addon-title">Olaplex No.1 & No.2 Molecular Bond Shield (+ $60 • 25 mins)</span>
-                  <span class="addon-sub">Prevents and repairs disulfide bond breakage</span>
-                </span>
-              </label>
-
-              <label class="addon-checkbox-label">
-                <input type="checkbox" class="customizer-addon" data-id="scalp" data-name="Scalp Detox Micro-Steam Spa" data-price="50" data-time="30">
-                <span class="checkbox-custom"></span>
-                <span class="addon-info">
-                  <span class="addon-title">Scalp Detox Micro-Steam Spa (+ $50 • 30 mins)</span>
-                  <span class="addon-sub">Tea tree exfoliation, warm ozone steam & tension relief massage</span>
-                </span>
-              </label>
-
-              <label class="addon-checkbox-label">
-                <input type="checkbox" class="customizer-addon" data-id="dusting" data-name="Split-End Micro Dusting" data-price="35" data-time="15">
-                <span class="checkbox-custom"></span>
-                <span class="addon-info">
-                  <span class="addon-title">Split-End Micro Dusting (+ $35 • 15 mins)</span>
-                  <span class="addon-sub">Removes damaged ends without losing a millimeter of length</span>
-                </span>
-              </label>
-
-              <label class="addon-checkbox-label">
-                <input type="checkbox" class="customizer-addon" data-id="aromatherapy" data-name="Rosewater Aromatherapy Head Massage" data-price="25" data-time="15">
-                <span class="checkbox-custom"></span>
-                <span class="addon-info">
-                  <span class="addon-title">Rosewater Aromatherapy Head Massage (+ $25 • 15 mins)</span>
-                  <span class="addon-sub">Calming acupressure ritual with pure French rose essential oil</span>
-                </span>
-              </label>
-            </div>
-          </div>
-
-          <div class="customizer-calc-card">
-            <div class="calc-card-header">
-              <span class="badge-tag">✦ Live Estimate</span>
-              <h3>Package Summary</h3>
-            </div>
-
-            <div class="calc-breakdown">
-              <div class="calc-row">
-                <span id="calc-base-name">Caramel Honey Balayage & Glaze</span>
-                <span id="calc-base-price" class="calc-val">$240</span>
-              </div>
-              <div id="calc-addons-container">
-                <!-- Add-on rows populated here -->
-              </div>
-              <div class="calc-divider"></div>
-              <div class="calc-row">
-                <span>Total Estimated Time:</span>
-                <span id="calc-total-time" class="calc-val gold">160 mins (2h 40m)</span>
-              </div>
-              <div class="calc-row total-row">
-                <span>Total Investment:</span>
-                <span id="calc-total-price" class="calc-val gold-total">$240</span>
-              </div>
-            </div>
-
-            <button type="button" class="btn btn-primary" id="customizer-book-now-btn" style="width: 100%; margin-top: 1.5rem;">
-              <span>Book Customized Package</span>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </button>
-            <p style="text-align:center; font-size: 0.75rem; color: var(--text-muted); margin-top: 0.8rem;">
-              Includes complimentary champagne & botanical scalp wash.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= THE ATELIER EXPERIENCE ================= -->
-    <section class="atelier-section" id="atelier">
-      <div class="container">
-        <div class="atelier-grid">
-          <div class="atelier-visual">
-            <div class="atelier-image-card">
-              <img src="images/stylist.jpg" alt="Élixir Atelier master stylist precision cutting client hair" width="1280" height="960" loading="lazy">
-              <div class="atelier-badge-float">
-                <span>✦ Private Salon Atelier Experience</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="atelier-content">
-            <span class="section-label">Our Philosophy</span>
-            <h2 class="section-title">Mastering the Art of <span class="gold-text">Hair Architecture</span></h2>
-            <p class="hero-lead">
-              We believe your hair is your most personal couture garment. At Élixir Atelier, appointments are never rushed. We combine scientific strand health analysis with haute editorial design.
-            </p>
-
-            <div class="feature-list">
-              <div class="feature-item">
-                <div class="feature-num">01</div>
-                <div class="feature-text">
-                  <h4>Bespoke Contour Consultation</h4>
-                  <p>Every session starts with a 15-minute analysis of your bone structure, skin undertone, and hair porosity to customize shades and silhouettes uniquely for you.</p>
+                <!-- Card 2 -->
+                <div class="service-card" data-category="color">
+                    <div class="service-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80" alt="Balayage & Color" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <div>
+                            <h3>Color & Balayage</h3>
+                            <p>Hand-painted ribbons, seamless melt gradients, and gloss glaze using organic, ammonia-free French color.</p>
+                        </div>
+                        <div class="service-footer">
+                            <span class="price">From $120</span>
+                            <button type="button" class="service-book-btn open-modal-btn" data-service="Color & Balayage" data-price="$120">Reserve</button>
+                        </div>
+                    </div>
                 </div>
-              </div>
 
-              <div class="feature-item">
-                <div class="feature-num">02</div>
-                <div class="feature-text">
-                  <h4>Clean High-Performance Chemistry</h4>
-                  <p>We exclusively utilize sulfate-free, ammonia-free, and vegan certified French & Japanese formulations that strengthen hair bonds from the cortex outward.</p>
+                <!-- Card 3 -->
+                <div class="service-card" data-category="styling">
+                    <div class="service-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&q=80" alt="Styling and Blowouts" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <div>
+                            <h3>Styling & Blowouts</h3>
+                            <p>Silk presses, runway waves, and voluminous bouncy blowouts protected with humidity-resistant diamond serum.</p>
+                        </div>
+                        <div class="service-footer">
+                            <span class="price">From $55</span>
+                            <button type="button" class="service-book-btn open-modal-btn" data-service="Styling & Blowouts" data-price="$55">Reserve</button>
+                        </div>
+                    </div>
                 </div>
-              </div>
 
-              <div class="feature-item">
-                <div class="feature-num">03</div>
-                <div class="feature-text">
-                  <h4>Sensory Sanctuary Hospitality</h4>
-                  <p>Sip freshly brewed espresso, cold sparkling botanical teas, or chilled champagne in our private acoustic stations designed for tranquil rejuvenation.</p>
+                <!-- Card 4 -->
+                <div class="service-card" data-category="treatments">
+                    <div class="service-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&q=80" alt="Hair Treatments" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <div>
+                            <h3>Bond Treatments</h3>
+                            <p>Molecular peptide restoration, warm ozone steam hydration, and scalp detox to reverse thermal damage.</p>
+                        </div>
+                        <div class="service-footer">
+                            <span class="price">From $85</span>
+                            <button type="button" class="service-book-btn open-modal-btn" data-service="Bond Treatments" data-price="$85">Reserve</button>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
     </section>
 
-    <!-- ================= CURATED LOOKBOOK GALLERY ================= -->
-    <section class="gallery-section" id="lookbook">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label">Visual Inspiration</span>
-          <h2 class="section-title">Curated <span class="gold-text">Lookbook</span></h2>
-          <p class="section-sub">Explore our latest runway and editorial transformations. Tap any look to view formula details and book with our specialists.</p>
+    <!-- Before & After Interactive Slider -->
+    <section class="transformation-section" id="transformation">
+        <div class="container">
+            <div class="section-header">
+                <div class="gold-line"></div>
+                <span class="section-tag">Visual Proof</span>
+                <h2>The Power of Transformation</h2>
+                <p>Drag the center divider to witness the luminous depth and radiance crafted by our master stylists.</p>
+            </div>
+
+            <div class="ba-wrapper">
+                <div class="ba-viewport" id="ba-viewport">
+                    <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=1000&q=80" class="ba-image" alt="Hair Before Transformation">
+                    <span class="ba-pill ba-pill-before">Before</span>
+
+                    <div class="ba-overlay-clipped" id="ba-clipped">
+                        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1000&q=80" class="ba-image" alt="Hair After Balayage">
+                        <span class="ba-pill ba-pill-after">After (Balayage & Glaze)</span>
+                    </div>
+
+                    <div class="ba-handle" id="ba-handle">
+                        <div class="ba-handle-knob" title="Drag to compare">◄ ►</div>
+                    </div>
+                </div>
+
+                <div class="ba-caption">
+                    <div>
+                        <strong style="color: var(--dark); font-size: 1.05rem;">Signature Honey Balayage & Glaze</strong>
+                        <p style="color: var(--gray); font-size: 0.85rem; margin: 0;">Completed by Isabella Monroe • 2.5 hours</p>
+                    </div>
+                    <button type="button" class="btn open-modal-btn" data-service="Color & Balayage" style="padding: 10px 24px; font-size: 0.85rem;">Book Look</button>
+                </div>
+            </div>
         </div>
-
-        <div class="gallery-grid">
-          <!-- Look 1 -->
-          <div class="gallery-item lookbook-card" 
-               data-title="Bohemian Goddess Knotless Braids" 
-               data-stylist="Amara Vance" 
-               data-service="Bohemian Goddess Knotless Braids" 
-               data-price="$280" 
-               data-duration="210 mins" 
-               data-img="images/braids.jpg"
-               data-formula="Ultra-light knotless parting with 100% Raw Virgin Cambodian human curls, finished with 24k gold filigree cuffs & rosewater scalp mist."
-               data-maintenance="Every 8–10 weeks with scalp refresh at week 4.">
-            <img src="images/braids.jpg" alt="Knotless bohemian box braids with gold cuffs" loading="lazy">
-            <div class="gallery-overlay">
-              <h5>Bohemian Goddess Braids</h5>
-              <p>View Look & Formula Details ↗</p>
-            </div>
-          </div>
-
-          <!-- Look 2 -->
-          <div class="gallery-item lookbook-card" 
-               data-title="Liquid Glass Blunt Bob" 
-               data-stylist="Julian Rey" 
-               data-service="Liquid Glass Silk Press Ritual" 
-               data-price="$135" 
-               data-duration="110 mins" 
-               data-img="images/silkpress.jpg"
-               data-formula="Diamond steam infusion with micro-molecular thermal shield and razor-sharp perimeter blunt weight line cut."
-               data-maintenance="Every 3–4 weeks for silk blowout & end dusting.">
-            <img src="images/silkpress.jpg" alt="Blunt bob cut with glass hair silk press" loading="lazy">
-            <div class="gallery-overlay">
-              <h5>Liquid Glass Blunt Bob</h5>
-              <p>View Look & Formula Details ↗</p>
-            </div>
-          </div>
-
-          <!-- Look 3 -->
-          <div class="gallery-item lookbook-card" 
-               data-title="Dimensional Caramel Balayage" 
-               data-stylist="Camille Laurent" 
-               data-service="Caramel Honey Balayage & Glaze" 
-               data-price="$240" 
-               data-duration="160 mins" 
-               data-img="images/after.jpg"
-               data-formula="Hand-painted French balayage with Level 9 warm caramel beige toner, Olaplex No.1/2 bond therapy, and signature blowout."
-               data-maintenance="Every 12–16 weeks with a 6-week gloss glaze refresh.">
-            <img src="images/after.jpg" alt="Honey caramel balayage with voluminous blowout" loading="lazy">
-            <div class="gallery-overlay">
-              <h5>Dimensional Honey Balayage</h5>
-              <p>View Look & Formula Details ↗</p>
-            </div>
-          </div>
-
-          <!-- Look 4 -->
-          <div class="gallery-item lookbook-card" 
-               data-title="Runway Sculptural Volume Blowout" 
-               data-stylist="Julian Rey" 
-               data-service="Architectural Precision Haircut" 
-               data-price="$110" 
-               data-duration="75 mins" 
-               data-img="images/hero.jpg"
-               data-formula="Long layered face-framing silhouette cut mapped to cheekbone structure with round-brush ceramic barrel blowout."
-               data-maintenance="Every 8–10 weeks for shape preservation.">
-            <img src="images/hero.jpg" alt="Signature blowout waves in luxury salon" loading="lazy">
-            <div class="gallery-overlay">
-              <h5>Runway Volume Blowout</h5>
-              <p>View Look & Formula Details ↗</p>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
-    <!-- ================= MASTER STYLISTS ROSTER ================= -->
-    <section class="stylists-section" id="stylists">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label">Artisans</span>
-          <h2 class="section-title">Meet Our <span class="gold-text">Master Stylists</span></h2>
-          <p class="section-sub">Trained across Paris, London, and New York, our artists bring decades of high-fashion editorial and red carpet expertise.</p>
+    <!-- Gallery -->
+    <section id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <div class="gold-line"></div>
+                <span class="section-tag">Lookbook</span>
+                <h2>Client Transformations</h2>
+                <p>Explore recent creations from our studio floor. Tap any style to reserve your session.</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item open-modal-btn" data-service="Color & Balayage">
+                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80" alt="Dimensional Balayage" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Caramel Balayage</h4>
+                        <span>Tap to Book Look ↗</span>
+                    </div>
+                </div>
+                <div class="gallery-item open-modal-btn" data-service="Precision Cuts">
+                    <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=600&q=80" alt="Precision Layer Cut" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Precision Layering</h4>
+                        <span>Tap to Book Look ↗</span>
+                    </div>
+                </div>
+                <div class="gallery-item open-modal-btn" data-service="Color & Balayage">
+                    <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&q=80" alt="Vivid Color" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Vivid Color</h4>
+                        <span>Tap to Book Look ↗</span>
+                    </div>
+                </div>
+                <div class="gallery-item open-modal-btn" data-service="Styling & Blowouts">
+                    <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=600&q=80" alt="Bridal Styling" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Bridal Styling</h4>
+                        <span>Tap to Book Look ↗</span>
+                    </div>
+                </div>
+                <div class="gallery-item open-modal-btn" data-service="Styling & Blowouts">
+                    <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&q=80" alt="Glass Hair Silk Press" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Liquid Silk Press</h4>
+                        <span>Tap to Book Look ↗</span>
+                    </div>
+                </div>
+                <div class="gallery-item open-modal-btn" data-service="Precision Cuts">
+                    <img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=600&q=80" alt="Modern Men's Cut" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Modern Sculpt Cut</h4>
+                        <span>Tap to Book Look ↗</span>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="stylists-grid">
-          <!-- Stylist 1 -->
-          <div class="stylist-card">
-            <div class="stylist-img-wrap">
-              <img src="images/stylist.jpg" alt="Camille Laurent - Creative Director" loading="lazy">
-            </div>
-            <div class="stylist-content">
-              <div class="stylist-role">Creative Color Director</div>
-              <h3 class="stylist-name">Camille Laurent</h3>
-              <p class="stylist-bio">12 years of French balayage mastery. Celebrated for seamless sun-kissed blends and bespoke gloss toning for delicate hair textures.</p>
-              <div class="stylist-footer">
-                <span class="stylist-specialty">Balayage & Blonding</span>
-                <button type="button" class="btn btn-outline btn-sm open-booking-btn" data-stylist="Camille Laurent">Book with Camille</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Stylist 2 -->
-          <div class="stylist-card">
-            <div class="stylist-img-wrap">
-              <img src="images/braids.jpg" alt="Amara Vance - Texture & Protective Specialist" loading="lazy">
-            </div>
-            <div class="stylist-content">
-              <div class="stylist-role">Texture & Protective Artist</div>
-              <h3 class="stylist-name">Amara Vance</h3>
-              <p class="stylist-bio">Pioneer in scalp-first protective styling, tension-free knotless braiding, and moisture-rich silk presses that preserve curl pattern integrity.</p>
-              <div class="stylist-footer">
-                <span class="stylist-specialty">Braids & Silk Press</span>
-                <button type="button" class="btn btn-outline btn-sm open-booking-btn" data-stylist="Amara Vance">Book with Amara</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Stylist 3 -->
-          <div class="stylist-card">
-            <div class="stylist-img-wrap">
-              <img src="images/silkpress.jpg" alt="Julian Rey - Precision Sculptor" loading="lazy">
-            </div>
-            <div class="stylist-content">
-              <div class="stylist-role">Lead Hair Architect</div>
-              <h3 class="stylist-name">Julian Rey</h3>
-              <p class="stylist-bio">Specialist in geometric bobs, dry haircutting, and molecular bond reconstruction. Creates shapes that effortlessly fall into place every morning.</p>
-              <div class="stylist-footer">
-                <span class="stylist-specialty">Precision Cuts & Bobs</span>
-                <button type="button" class="btn btn-outline btn-sm open-booking-btn" data-stylist="Julian Rey">Book with Julian</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
-    <!-- ================= CLIENT REVIEWS & VERIFIED PRESS ================= -->
-    <section class="reviews-section" id="reviews">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label">Acclaim & Stories</span>
-          <h2 class="section-title">Loved by <span class="gold-text">Discerning Clients</span></h2>
-          <p class="section-sub">Over 2,400 verified five-star transformations across New York & international travelers.</p>
+    <!-- About -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=800&q=80" alt="Master Stylist Isabella Monroe" loading="lazy">
+                </div>
+                <div class="about-content">
+                    <div class="gold-line" style="margin: 0 0 18px;"></div>
+                    <span class="section-tag" style="color: var(--gold-light);">Artisan Philosophy</span>
+                    <h2>Crafted with Passion,<br>Styled with Precision</h2>
+                    <p>At Luxe Locks Studio, hair is treated as your primary couture piece. Founded by editorial director Isabella Monroe, our studio has shaped silhouettes and refined confidence for discerning clients across Manhattan.</p>
+                    <p>We blend Japanese organic bond chemistry with timeless French hand-painting. Every guest enjoys private acoustic seating, artisanal espresso, and our signature botanical scalp massage.</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <h3>12+</h3>
+                            <p>Years Mastery</p>
+                        </div>
+                        <div class="stat">
+                            <h3>5,200+</h3>
+                            <p>Transformations</p>
+                        </div>
+                        <div class="stat">
+                            <h3>100%</h3>
+                            <p>Cruelty Free</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <!-- Review Category Filters & Action -->
-        <div class="reviews-toolbar">
-          <div class="review-filter-pills" id="review-filter-pills">
-            <button type="button" class="review-pill-btn active" data-review-filter="all">All Reviews (2,400+)</button>
-            <button type="button" class="review-pill-btn" data-review-filter="balayage">Balayage & Color</button>
-            <button type="button" class="review-pill-btn" data-review-filter="silkpress">Silk Press & Texture</button>
-            <button type="button" class="review-pill-btn" data-review-filter="braids">Protective Braids</button>
-            <button type="button" class="review-pill-btn" data-review-filter="cuts">Precision Cuts</button>
-          </div>
-          <button type="button" class="btn btn-outline btn-sm" id="write-review-open-btn">
-            <span>✍ Leave a Client Review</span>
-          </button>
-        </div>
-
-        <div class="reviews-grid" id="reviews-container">
-          <!-- Review 1 -->
-          <div class="review-card" data-review-category="balayage">
-            <div class="stars">★★★★★</div>
-            <p class="review-quote">"The caramel balayage Camille did is pure magic. People stop me on 5th Avenue asking who does my hair. The salon feels like a private Parisian townhouse."</p>
-            <div class="reviewer-meta">
-              <div class="reviewer-avatar">SC</div>
-              <div class="reviewer-info">
-                <h5>Sophia Carrington</h5>
-                <span>Verified Client • Balayage & Blowout</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Review 2 -->
-          <div class="review-card" data-review-category="braids">
-            <div class="stars">★★★★★</div>
-            <p class="review-quote">"Amara’s knotless braids are the lightest, most comfortable I’ve ever had. Zero headaches, immaculate parting, and the gold cuffs added such regal elegance."</p>
-            <div class="reviewer-meta">
-              <div class="reviewer-avatar">MA</div>
-              <div class="reviewer-info">
-                <h5>Maya Adeleke</h5>
-                <span>Verified Client • Bohemian Braids</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Review 3 -->
-          <div class="review-card" data-review-category="silkpress">
-            <div class="stars">★★★★★</div>
-            <p class="review-quote">"Julian’s precision bob cut completely redefined my jawline. My silk press survived three days in NYC humidity without curling up. Unrivaled artistry."</p>
-            <div class="reviewer-meta">
-              <div class="reviewer-avatar">EL</div>
-              <div class="reviewer-info">
-                <h5>Elena Lin</h5>
-                <span>Verified Client • Precision Cut & Silk Press</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Review 4 -->
-          <div class="review-card" data-review-category="cuts">
-            <div class="stars">★★★★★</div>
-            <p class="review-quote">"The botanical scalp massage alone is worth the trip. Julian understood my face shape immediately and sculpted layers that require zero morning styling."</p>
-            <div class="reviewer-meta">
-              <div class="reviewer-avatar">GW</div>
-              <div class="reviewer-info">
-                <h5>Genevieve West</h5>
-                <span>Verified Client • Architectural Precision Cut</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
-  </main>
 
-  <!-- ================= STICKY MOBILE QUICK-ACTION BAR ================= -->
-  <aside class="sticky-mobile-bar" aria-label="Mobile Quick Booking">
-    <div class="mobile-bar-info">
-      <span class="mobile-bar-title">Élixir Atelier</span>
-      <span class="mobile-bar-meta"><span class="pulse-dot"></span> Open Today til 8PM</span>
-    </div>
-    <button type="button" class="btn btn-primary btn-sm open-booking-btn">
-      <span>Book • From $45</span>
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </button>
-  </aside>
-
-  <!-- ================= FOOTER ================= -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="brand-logo">
-            <div class="brand-monogram">É</div>
-            <div class="brand-text">
-              <span class="brand-title">ÉLIXIR</span>
-              <span class="brand-subtitle">ATELIER</span>
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <div class="gold-line"></div>
+                <span class="section-tag">Testimonials</span>
+                <h2>Client Love</h2>
+                <p>Real stories from clients who trust us with their crowning glory.</p>
             </div>
-          </div>
-          <p>Haute coiffure, dimensional color, and bespoke hair architecture designed for effortless elegance and enduring hair health.</p>
-          <div class="social-links">
-            <a href="#" class="social-btn" aria-label="Instagram">IG</a>
-            <a href="#" class="social-btn" aria-label="TikTok">TT</a>
-            <a href="#" class="social-btn" aria-label="Pinterest">PIN</a>
-            <a href="https://wa.me/12125550198" target="_blank" class="social-btn" aria-label="WhatsApp Concierge">WA</a>
-          </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p>“Isabella completely transformed my hair. The balayage she created looks seamlessly sun-kissed. I have never received so many compliments on 5th Avenue!”</p>
+                    <div class="client">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" class="client-img" alt="Sarah Mitchell">
+                        <div class="client-info">
+                            <h4>Sarah Mitchell</h4>
+                            <span>Verified Client • Balayage</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>“The attention to detail here is unmatched. From the soothing scalp massage at the shampoo basin to the final runway blowout — every second feels like pure indulgence.”</p>
+                    <div class="client">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" class="client-img" alt="Emily Chen">
+                        <div class="client-info">
+                            <h4>Emily Chen</h4>
+                            <span>Regular Client • Silk Press</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>“I came in with severe bleach damage from another salon. The bond treatment and gentle toning performed absolute wonders. My curls have never felt healthier.”</p>
+                    <div class="client">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&q=80" class="client-img" alt="Jasmine Torres">
+                        <div class="client-info">
+                            <h4>Jasmine Torres</h4>
+                            <span>Verified Client • Repair & Color</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="footer-col">
-          <h5>Quick Navigation</h5>
-          <ul class="footer-links">
-            <li><a href="#hero">Atelier Home</a></li>
-            <li><a href="#transformations">Before & After</a></li>
-            <li><a href="#diagnostic">Hair Diagnostic</a></li>
-            <li><a href="#services">Services & Rates</a></li>
-            <li><a href="#customizer">Package Customizer</a></li>
-            <li><a href="#stylists">Master Stylists</a></li>
-            <li><a href="#reviews">Client Stories</a></li>
-          </ul>
+    <!-- Booking -->
+    <section class="booking" id="booking">
+        <div class="container">
+            <div class="gold-line"></div>
+            <h2>Ready for Your Transformation?</h2>
+            <p>Reserve your appointment online or contact our concierge directly.</p>
+            <div class="booking-actions">
+                <button type="button" class="btn open-modal-btn">Instant Online Booking</button>
+                <a href="tel:+15551234567" class="btn btn-outline">Call (555) 123-4567</a>
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h4>Location</h4>
+                    <p>245 Fashion Ave, Suite 12<br>New York, NY 10001</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Studio Hours</h4>
+                    <p>Tue–Fri: 9am – 8pm<br>Sat–Sun: 10am – 6pm</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Concierge</h4>
+                    <p>(555) 123-4567<br>hello@luxelocks.studio</p>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="footer-col">
-          <h5>Studio Location</h5>
-          <p style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.6; margin-bottom: 0.8rem;">
-            450 Madison Avenue, 4th Floor<br>
-            New York, NY 10022<br>
-            Between 50th & 51st Street
-          </p>
-          <p style="color: var(--gold-400); font-size: 0.85rem; font-weight: 600;">
-            Direct Concierge: +1 (212) 555-0198
-          </p>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Luxe Locks Studio. All rights reserved. | Haute Coiffure Excellence.</p>
+    </footer>
+
+    <!-- Sticky Mobile Booking Bar -->
+    <div class="sticky-mobile-bar">
+        <div class="mobile-bar-info">
+            <strong>Luxe Locks Studio</strong>
+            <span>✦ NYC Fashion District</span>
         </div>
-
-        <div class="footer-col footer-newsletter">
-          <h5>VIP Atelier Club</h5>
-          <p>Subscribe for exclusive seasonal lookbook drops, priority holiday reservations, and 15% off your first visit.</p>
-          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for joining the VIP Atelier Club. Check your inbox for your 15% invitation code.');">
-            <input type="email" class="newsletter-input" placeholder="Your email address..." required>
-            <button type="submit" class="btn btn-primary btn-sm">Join</button>
-          </form>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>© 2026 Élixir Atelier. All rights reserved. Haute Coiffure Excellence.</p>
-        <p>Crafted with precision & passion for beautiful hair.</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- ================= 4-STEP INTERACTIVE BOOKING WIZARD MODAL ================= -->
-  <div class="modal-backdrop" id="booking-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-heading">
-    <div class="booking-modal">
-      
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <div>
-          <span class="section-label" style="margin-bottom: 0.2rem;">Concierge Booking</span>
-          <h3 id="modal-heading" style="font-size: 1.35rem;">Reserve Your Experience</h3>
-        </div>
-        <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Close booking modal">✕</button>
-      </div>
-
-      <!-- Wizard Progress Indicators -->
-      <div class="wizard-progress">
-        <div class="wizard-step-node active" id="node-1">
-          <span class="step-node-num">1</span>
-          <span>Service & Perks</span>
-        </div>
-        <div class="wizard-step-node" id="node-2">
-          <span class="step-node-num">2</span>
-          <span>Stylist</span>
-        </div>
-        <div class="wizard-step-node" id="node-3">
-          <span class="step-node-num">3</span>
-          <span>Date & Time</span>
-        </div>
-        <div class="wizard-step-node" id="node-4">
-          <span class="step-node-num">4</span>
-          <span>Confirm</span>
-        </div>
-      </div>
-
-      <!-- Modal Body (Steps) -->
-      <div class="modal-body">
-        
-        <!-- STEP 1: Select Service & Add-Ons -->
-        <div class="wizard-step-content active" id="step-1">
-          <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;">
-            Choose your signature hair service and optional luxury restorative add-ons.
-          </p>
-          <div class="service-pick-grid">
-            <div class="service-pick-item selected" data-service="Caramel Honey Balayage & Glaze" data-price="$240" data-duration="160 mins">
-              <div class="pick-item-info">
-                <h5>Caramel Honey Balayage & Glaze</h5>
-                <span>⏱ 160 mins • Multi-tonal hand painting & gloss</span>
-              </div>
-              <div class="pick-item-price">$240</div>
-            </div>
-
-            <div class="service-pick-item" data-service="Architectural Precision Haircut" data-price="$110" data-duration="75 mins">
-              <div class="pick-item-info">
-                <h5>Architectural Precision Haircut</h5>
-                <span>⏱ 75 mins • Bone-structure customized cut & blowout</span>
-              </div>
-              <div class="pick-item-price">$110</div>
-            </div>
-
-            <div class="service-pick-item" data-service="Liquid Glass Silk Press Ritual" data-price="$135" data-duration="110 mins">
-              <div class="pick-item-info">
-                <h5>Liquid Glass Silk Press Ritual</h5>
-                <span>⏱ 110 mins • High shine steam treatment & silk press</span>
-              </div>
-              <div class="pick-item-price">$135</div>
-            </div>
-
-            <div class="service-pick-item" data-service="Bohemian Goddess Knotless Braids" data-price="$280" data-duration="210 mins">
-              <div class="pick-item-info">
-                <h5>Bohemian Goddess Knotless Braids</h5>
-                <span>⏱ 210 mins • Zero-tension knotless with curls & cuffs</span>
-              </div>
-              <div class="pick-item-price">$280</div>
-            </div>
-
-            <div class="service-pick-item" data-service="Full Dimension All-Over Gloss & Color" data-price="$175" data-duration="120 mins">
-              <div class="pick-item-info">
-                <h5>Full Dimension All-Over Gloss & Color</h5>
-                <span>⏱ 120 mins • Organic tone-infusion color bath</span>
-              </div>
-              <div class="pick-item-price">$175</div>
-            </div>
-
-            <div class="service-pick-item" data-service="K18 Molecular Peptide & Scalp Detox" data-price="$95" data-duration="90 mins">
-              <div class="pick-item-info">
-                <h5>K18 Molecular Peptide & Scalp Detox</h5>
-                <span>⏱ 90 mins • Deep strand repair & scalp revival</span>
-              </div>
-              <div class="pick-item-price">$95</div>
-            </div>
-          </div>
-
-          <!-- Wizard Modal Add-Ons Selector -->
-          <div class="modal-addons-block">
-            <h5 class="modal-addons-title">Optional Restorative Add-Ons:</h5>
-            <div class="modal-addons-list">
-              <label class="modal-addon-chip">
-                <input type="checkbox" class="wizard-addon-check" data-name="Gloss Glaze" data-price="45" data-time="20">
-                <span>+ Gloss Glaze (+$45)</span>
-              </label>
-              <label class="modal-addon-chip">
-                <input type="checkbox" class="wizard-addon-check" data-name="Olaplex Shield" data-price="60" data-time="25">
-                <span>+ Olaplex Bond Shield (+$60)</span>
-              </label>
-              <label class="modal-addon-chip">
-                <input type="checkbox" class="wizard-addon-check" data-name="Scalp Steam Spa" data-price="50" data-time="30">
-                <span>+ Scalp Steam Spa (+$50)</span>
-              </label>
-              <label class="modal-addon-chip">
-                <input type="checkbox" class="wizard-addon-check" data-name="Micro Dusting" data-price="35" data-time="15">
-                <span>+ Split-End Dusting (+$35)</span>
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <!-- STEP 2: Choose Stylist -->
-        <div class="wizard-step-content" id="step-2">
-          <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.25rem;">
-            Select your preferred artisan or let us pair you with our first available master.
-          </p>
-          <div class="stylist-pick-grid">
-            <div class="stylist-pick-card selected" data-stylist="First Available Master">
-              <div class="stylist-pick-avatar" style="background: var(--gold-gradient); display:flex; align-items:center; justify-content:center; color: #000; font-weight:700;">
-                ✦
-              </div>
-              <div>
-                <h5 style="font-size: 0.95rem;">First Available Master</h5>
-                <span style="font-size: 0.75rem; color: var(--gold-400);">Maximum schedule flexibility</span>
-              </div>
-            </div>
-
-            <div class="stylist-pick-card" data-stylist="Camille Laurent">
-              <div class="stylist-pick-avatar">
-                <img src="images/stylist.jpg" alt="Camille Laurent">
-              </div>
-              <div>
-                <h5 style="font-size: 0.95rem;">Camille Laurent</h5>
-                <span style="font-size: 0.75rem; color: var(--text-muted);">Color & Balayage Director</span>
-              </div>
-            </div>
-
-            <div class="stylist-pick-card" data-stylist="Amara Vance">
-              <div class="stylist-pick-avatar">
-                <img src="images/braids.jpg" alt="Amara Vance">
-              </div>
-              <div>
-                <h5 style="font-size: 0.95rem;">Amara Vance</h5>
-                <span style="font-size: 0.75rem; color: var(--text-muted);">Texture & Braids Specialist</span>
-              </div>
-            </div>
-
-            <div class="stylist-pick-card" data-stylist="Julian Rey">
-              <div class="stylist-pick-avatar">
-                <img src="images/silkpress.jpg" alt="Julian Rey">
-              </div>
-              <div>
-                <h5 style="font-size: 0.95rem;">Julian Rey</h5>
-                <span style="font-size: 0.75rem; color: var(--text-muted);">Precision Hair Architect</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- STEP 3: Date & Time -->
-        <div class="wizard-step-content" id="step-3">
-          <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.25rem;">
-            Select your preferred appointment date and arrival time.
-          </p>
-          <div class="date-time-grid">
-            <div class="form-group">
-              <label for="booking-date">Appointment Date</label>
-              <input type="date" id="booking-date" class="form-input">
-            </div>
-
-            <div class="form-group">
-              <label>Available Slots</label>
-              <div class="time-slots-container" id="time-slots-wrapper">
-                <button type="button" class="time-slot-btn selected" data-time="09:30 AM">09:30 AM</button>
-                <button type="button" class="time-slot-btn" data-time="11:00 AM">11:00 AM</button>
-                <button type="button" class="time-slot-btn" data-time="01:15 PM">01:15 PM</button>
-                <button type="button" class="time-slot-btn" data-time="03:00 PM">03:00 PM</button>
-                <button type="button" class="time-slot-btn" data-time="04:45 PM">04:45 PM</button>
-                <button type="button" class="time-slot-btn" data-time="06:30 PM">06:30 PM</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- STEP 4: Client Info & Summary -->
-        <div class="wizard-step-content" id="step-4">
-          <div class="booking-summary-box">
-            <div class="summary-row">
-              <span class="summary-label">Selected Experience:</span>
-              <span class="summary-val" id="summary-service">Caramel Honey Balayage & Glaze</span>
-            </div>
-            <div class="summary-row" id="summary-addons-row" style="display: none;">
-              <span class="summary-label">Add-On Enhancements:</span>
-              <span class="summary-val" id="summary-addons-val">None</span>
-            </div>
-            <div class="summary-row">
-              <span class="summary-label">Master Stylist:</span>
-              <span class="summary-val" id="summary-stylist">Camille Laurent</span>
-            </div>
-            <div class="summary-row">
-              <span class="summary-label">Date & Time:</span>
-              <span class="summary-val" id="summary-datetime">Selected Date at 09:30 AM</span>
-            </div>
-            <div class="summary-row">
-              <span class="summary-label">Estimated Duration:</span>
-              <span class="summary-val" id="summary-duration">160 mins</span>
-            </div>
-            <div class="summary-row">
-              <span class="summary-label">Total Investment:</span>
-              <span class="summary-val gold" id="summary-price">$240</span>
-            </div>
-          </div>
-
-          <form id="client-info-form" class="client-form-grid" onsubmit="event.preventDefault();">
-            <div class="form-group">
-              <label for="client-name">Your Full Name *</label>
-              <input type="text" id="client-name" class="form-input" placeholder="e.g. Victoria Sterling" required>
-            </div>
-
-            <div class="form-group">
-              <label for="client-phone">Phone / WhatsApp *</label>
-              <input type="tel" id="client-phone" class="form-input" placeholder="e.g. +1 (555) 019-2834" required>
-            </div>
-
-            <div class="form-group full-span">
-              <label for="client-notes">Hair History & Special Requests</label>
-              <input type="text" id="client-notes" class="form-input" placeholder="e.g. Previous color history, beverage preference, or inspo reference">
-            </div>
-          </form>
-        </div>
-
-        <!-- STEP 5: Success Ticket State with Calendar Integration -->
-        <div class="wizard-step-content" id="step-success">
-          <div class="confirmation-success">
-            <div class="success-icon-wrap">✦</div>
-            <h3 style="font-size: 1.8rem; margin-bottom: 0.3rem;">Appointment Reserved</h3>
-            <p style="color: var(--text-secondary); max-width: 460px; margin: 0 auto 1.2rem auto;">
-              Your bespoke reservation has been confirmed and saved to our Atelier Concierge system.
-            </p>
-            <div class="booking-ref-badge" id="confirmed-ref-badge">#ELX-2026-8942</div>
-
-            <!-- Calendar Export Integration Row -->
-            <div class="calendar-action-row">
-              <a href="#" id="google-calendar-btn" target="_blank" class="btn btn-outline btn-sm">
-                <span>📅 Add to Google Calendar</span>
-              </a>
-              <button type="button" id="download-ics-btn" class="btn btn-outline btn-sm">
-                <span>🍏 Download Apple/Outlook (.ICS)</span>
-              </button>
-            </div>
-
-            <div style="display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.2rem;">
-              <a href="#" id="whatsapp-dispatch-link" target="_blank" class="btn btn-primary">
-                <span>Open in WhatsApp</span>
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-              <button type="button" class="btn btn-outline" id="finish-booking-btn">
-                Done
-              </button>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Modal Footer Controls -->
-      <div class="modal-footer" id="modal-footer-nav">
-        <button type="button" class="btn btn-outline btn-sm" id="wizard-prev-btn" style="visibility: hidden;">
-          ← Back
+        <button type="button" class="mobile-bar-btn open-modal-btn">
+            Book Online
         </button>
-        <button type="button" class="btn btn-primary btn-sm" id="wizard-next-btn">
-          <span>Continue</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </button>
-      </div>
-
     </div>
-  </div>
 
-  <!-- ================= LOOKBOOK LIGHTBOX MODAL ================= -->
-  <div class="modal-backdrop" id="lookbook-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="lookbook-title">
-    <div class="lookbook-modal">
-      <button type="button" class="modal-close-btn" id="lookbook-close-btn" aria-label="Close lookbook details">✕</button>
-      <div class="lookbook-modal-grid">
-        <div class="lookbook-modal-img-wrap">
-          <img id="lb-modal-img" src="images/hero.jpg" alt="Lookbook visual closeup">
-        </div>
-        <div class="lookbook-modal-content">
-          <span class="section-label" id="lb-modal-stylist">Camille Laurent</span>
-          <h3 id="lb-modal-title" style="font-size: 1.6rem; margin-bottom: 0.6rem;">Caramel Honey Balayage</h3>
-          <p id="lb-modal-formula" style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin-bottom: 1.2rem;">
-            Formula & technique details.
-          </p>
-          
-          <div class="lookbook-specs">
-            <div class="lb-spec">
-              <span>Service Match</span>
-              <strong id="lb-modal-service">Caramel Honey Balayage</strong>
+    <!-- ================= INTERACTIVE BOOKING MODAL ================= -->
+    <div class="modal-overlay" id="booking-modal-overlay">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>Reserve Your Experience</h3>
+                <button type="button" class="modal-close-btn" id="modal-close-x">✕</button>
             </div>
-            <div class="lb-spec">
-              <span>Duration</span>
-              <strong id="lb-modal-duration">160 mins</strong>
-            </div>
-            <div class="lb-spec">
-              <span>Investment</span>
-              <strong class="gold-text" id="lb-modal-price">$240</strong>
-            </div>
-            <div class="lb-spec">
-              <span>Maintenance Cycle</span>
-              <strong id="lb-modal-maint">12–16 weeks</strong>
-            </div>
-          </div>
 
-          <button type="button" class="btn btn-primary" id="lb-modal-book-btn" style="width: 100%; margin-top: 1.5rem;">
-            <span>Book This Exact Look</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
+            <!-- Booking Form -->
+            <form id="booking-form" class="modal-body" onsubmit="event.preventDefault();">
+                <div id="booking-fields-view">
+                    <div class="form-row">
+                        <label for="book-service">Select Hair Experience</label>
+                        <select id="book-service" class="form-control" required>
+                            <option value="Precision Cuts" data-price="$65">Precision Cuts (From $65)</option>
+                            <option value="Color & Balayage" data-price="$120" selected>Color & Balayage (From $120)</option>
+                            <option value="Styling & Blowouts" data-price="$55">Styling & Blowouts (From $55)</option>
+                            <option value="Bond Treatments" data-price="$85">Bond Treatments (From $85)</option>
+                        </select>
+                    </div>
 
-  <!-- ================= CLIENT & STAFF ATELIER PORTAL MODAL ================= -->
-  <div class="modal-backdrop" id="portal-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="portal-heading">
-    <div class="portal-modal">
-      <div class="modal-header">
-        <div>
-          <span class="section-label" style="margin-bottom: 0.2rem;">Atelier Concierge Management</span>
-          <h3 id="portal-heading" style="font-size: 1.35rem;">Client & Staff Portal</h3>
-        </div>
-        <button type="button" class="modal-close-btn" id="portal-close-btn" aria-label="Close portal modal">✕</button>
-      </div>
+                    <div class="form-grid-2">
+                        <div class="form-row">
+                            <label for="book-stylist">Master Stylist</label>
+                            <select id="book-stylist" class="form-control">
+                                <option value="First Available Master">First Available Master</option>
+                                <option value="Isabella Monroe">Isabella Monroe (Creative Director)</option>
+                                <option value="Marcus Reed">Marcus Reed (Color Specialist)</option>
+                                <option value="Elena Vance">Elena Vance (Texture & Blowouts)</option>
+                            </select>
+                        </div>
 
-      <!-- Portal Tabs -->
-      <div class="portal-tabs">
-        <button type="button" class="portal-tab-btn active" data-tab="client">Client Lookup</button>
-        <button type="button" class="portal-tab-btn" data-tab="admin">Staff Atelier Dashboard</button>
-      </div>
+                        <div class="form-row">
+                            <label for="book-date">Appointment Date</label>
+                            <input type="date" id="book-date" class="form-control" required>
+                        </div>
+                    </div>
 
-      <div class="modal-body">
-        <!-- CLIENT LOOKUP PANE -->
-        <div class="portal-pane active" id="portal-client-pane">
-          <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.2rem;">
-            Enter your booking reference code (e.g. <code>#ELX-2026-8942</code>) or mobile phone to view, reschedule, or manage your reservation.
-          </p>
+                    <div class="form-row">
+                        <label>Preferred Time Slot</label>
+                        <div class="time-slots" id="time-slots">
+                            <button type="button" class="slot-btn selected" data-time="10:00 AM">10:00 AM</button>
+                            <button type="button" class="slot-btn" data-time="11:30 AM">11:30 AM</button>
+                            <button type="button" class="slot-btn" data-time="01:15 PM">01:15 PM</button>
+                            <button type="button" class="slot-btn" data-time="03:00 PM">03:00 PM</button>
+                            <button type="button" class="slot-btn" data-time="04:45 PM">04:45 PM</button>
+                            <button type="button" class="slot-btn" data-time="06:30 PM">06:30 PM</button>
+                        </div>
+                    </div>
 
-          <form id="client-lookup-form" class="lookup-input-row" onsubmit="event.preventDefault();">
-            <input type="text" id="lookup-query" class="form-input" placeholder="e.g. ELX-2026-8942 or 555-019-2834" required>
-            <button type="submit" class="btn btn-primary btn-sm">Find Booking</button>
-          </form>
+                    <div class="form-grid-2">
+                        <div class="form-row">
+                            <label for="client-name">Your Full Name *</label>
+                            <input type="text" id="client-name" class="form-control" placeholder="e.g. Victoria Sterling" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="client-phone">Phone / WhatsApp *</label>
+                            <input type="tel" id="client-phone" class="form-control" placeholder="e.g. (555) 019-2834" required>
+                        </div>
+                    </div>
 
-          <div id="lookup-result-container" style="margin-top: 1.5rem;"></div>
-        </div>
+                    <div class="form-row">
+                        <label for="client-notes">Hair Notes & Inspo Requests</label>
+                        <input type="text" id="client-notes" class="form-control" placeholder="e.g. Previous color history, coffee preference, or photo inspo">
+                    </div>
+                </div>
 
-        <!-- STAFF ADMIN PANE -->
-        <div class="portal-pane" id="portal-admin-pane">
-          <!-- PIN Lock Gate -->
-          <div id="admin-pin-gate">
-            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;">
-              Please enter the Atelier Staff Concierge Access PIN: <em>(Default: <code>1234</code>)</em>
-            </p>
-            <form id="admin-pin-form" class="lookup-input-row" onsubmit="event.preventDefault();">
-              <input type="password" id="admin-pin-input" class="form-input" placeholder="Enter Staff PIN..." maxlength="8" required>
-              <button type="submit" class="btn btn-primary btn-sm">Unlock Dashboard</button>
+                <!-- Confirmation Success View -->
+                <div class="booking-success-view" id="booking-success-view">
+                    <div class="success-icon">✦</div>
+                    <h3 style="font-size: 1.6rem; color: var(--dark);">Reservation Reserved</h3>
+                    <p style="color: var(--gray); font-size: 0.95rem; margin-top: 5px;">Your appointment has been registered with our atelier concierge team.</p>
+                    <div class="ref-badge" id="confirmed-ref">#LUXE-2026-8942</div>
+                    <p style="font-size: 0.88rem; color: var(--dark);" id="summary-meta-text">Balayage & Color with Isabella Monroe</p>
+
+                    <div class="cal-actions">
+                        <a href="#" id="gcal-btn" target="_blank" class="btn" style="padding: 10px 20px; font-size: 0.82rem;">📅 Add to Google Calendar</a>
+                        <button type="button" id="ics-btn" class="btn btn-outline" style="padding: 10px 20px; font-size: 0.82rem; color: var(--dark); border-color: var(--dark);">🍏 Download Apple .ICS</button>
+                    </div>
+                </div>
             </form>
-          </div>
 
-          <!-- Unlocked Staff Dashboard -->
-          <div id="admin-dashboard-view" style="display: none;">
-            <div class="admin-toolbar">
-              <div class="admin-stats">
-                <span class="stat-pill"><strong id="admin-total-count">0</strong> Bookings</span>
-                <span class="stat-pill gold"><strong id="admin-revenue-est">$0</strong> Projected</span>
-              </div>
-              <div class="admin-actions">
-                <button type="button" class="btn btn-outline btn-sm" id="admin-add-walkin-btn">+ Walk-In</button>
-                <button type="button" class="btn btn-outline btn-sm" id="admin-export-csv-btn">📥 Export CSV</button>
-              </div>
+            <div class="modal-footer-nav" id="modal-footer-nav">
+                <button type="button" class="btn btn-outline" id="modal-cancel-btn" style="color: var(--dark); border-color: var(--border-light); padding: 10px 22px; font-size: 0.85rem;">Cancel</button>
+                <button type="submit" form="booking-form" class="btn" id="modal-confirm-btn" style="padding: 10px 26px; font-size: 0.85rem;">Confirm Reservation</button>
             </div>
-
-            <!-- Filter Controls -->
-            <div class="admin-filters-row">
-              <select id="admin-stylist-filter" class="form-select sm">
-                <option value="all">All Stylists</option>
-                <option value="Camille Laurent">Camille Laurent</option>
-                <option value="Amara Vance">Amara Vance</option>
-                <option value="Julian Rey">Julian Rey</option>
-                <option value="First Available Master">First Available</option>
-              </select>
-              <input type="text" id="admin-search-input" class="form-input sm" placeholder="Search client or ref...">
-            </div>
-
-            <!-- Bookings Table -->
-            <div class="admin-table-container">
-              <table class="admin-table">
-                <thead>
-                  <tr>
-                    <th>Ref #</th>
-                    <th>Client</th>
-                    <th>Service & Stylist</th>
-                    <th>Date & Slot</th>
-                    <th>Status</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody id="admin-table-body">
-                  <!-- Populated dynamically -->
-                </tbody>
-              </table>
-            </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
 
-  <!-- ================= WRITE A REVIEW MODAL ================= -->
-  <div class="modal-backdrop" id="review-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="review-modal-title">
-    <div class="booking-modal" style="max-width: 500px;">
-      <div class="modal-header">
-        <div>
-          <span class="section-label" style="margin-bottom: 0.2rem;">Client Feedback</span>
-          <h3 id="review-modal-title" style="font-size: 1.35rem;">Write an Atelier Review</h3>
-        </div>
-        <button type="button" class="modal-close-btn" id="review-modal-close-btn" aria-label="Close review modal">✕</button>
-      </div>
+    <!-- ================= JAVASCRIPT ================= -->
+    <script>
+        // 1. Navigation on Scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 40) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
 
-      <div class="modal-body">
-        <form id="submit-review-form" onsubmit="event.preventDefault();">
-          <div class="form-group" style="margin-bottom: 1rem;">
-            <label for="rev-author">Your Name</label>
-            <input type="text" id="rev-author" class="form-input" placeholder="e.g. Genevieve Thorne" required>
-          </div>
+        // 2. Mobile Drawer Navigation
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const drawerCloseBtn = document.getElementById('drawer-close-btn');
+        const mobileDrawer = document.getElementById('mobile-drawer');
+        const drawerOverlay = document.getElementById('drawer-overlay');
+        const drawerLinks = document.querySelectorAll('.drawer-link');
 
-          <div class="form-group" style="margin-bottom: 1rem;">
-            <label for="rev-service-select">Service Experienced</label>
-            <select id="rev-service-select" class="form-select">
-              <option value="balayage">Caramel Honey Balayage & Glaze</option>
-              <option value="silkpress">Liquid Glass Silk Press Ritual</option>
-              <option value="braids">Bohemian Goddess Knotless Braids</option>
-              <option value="cuts">Architectural Precision Haircut</option>
-            </select>
-          </div>
+        function openDrawer() {
+            mobileDrawer.classList.add('active');
+            drawerOverlay.classList.add('active');
+            hamburgerBtn.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
 
-          <div class="form-group" style="margin-bottom: 1rem;">
-            <label>Rating</label>
-            <div class="star-rating-selector" id="star-rating-selector">
-              <span class="star-item active" data-stars="1">★</span>
-              <span class="star-item active" data-stars="2">★</span>
-              <span class="star-item active" data-stars="3">★</span>
-              <span class="star-item active" data-stars="4">★</span>
-              <span class="star-item active" data-stars="5">★</span>
-            </div>
-          </div>
+        function closeDrawer() {
+            mobileDrawer.classList.remove('active');
+            drawerOverlay.classList.remove('active');
+            hamburgerBtn.classList.remove('active');
+            document.body.style.overflow = '';
+        }
 
-          <div class="form-group" style="margin-bottom: 1.25rem;">
-            <label for="rev-text">Your Experience & Result</label>
-            <textarea id="rev-text" class="form-input" rows="3" placeholder="Tell us about your transformation..." required></textarea>
-          </div>
+        if (hamburgerBtn) hamburgerBtn.addEventListener('click', openDrawer);
+        if (drawerCloseBtn) drawerCloseBtn.addEventListener('click', closeDrawer);
+        if (drawerOverlay) drawerOverlay.addEventListener('click', closeDrawer);
+        drawerLinks.forEach(link => link.addEventListener('click', closeDrawer));
 
-          <button type="submit" class="btn btn-primary" style="width: 100%;">
-            <span>Publish Review</span>
-          </button>
-        </form>
-      </div>
-    </div>
-  </div>
+        // 3. Service Category Filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const serviceCards = document.querySelectorAll('.service-card');
 
-  <!-- ================= LIVE SOCIAL PROOF NOTIFICATION TOASTS ================= -->
-  <div class="live-toast-container" id="live-toast-container" aria-live="polite"></div>
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.dataset.filter;
 
-  <!-- ================= FLOATING SOUNDSCAPE CONTROLLER ================= -->
-  <div class="floating-audio-widget" id="floating-audio-widget">
-    <button type="button" class="audio-widget-toggle soundscape-toggle-btn" id="audio-widget-btn" title="Toggle Parisian Atelier Lounge Soundscape">
-      <span class="audio-wave"></span>
-      <span class="audio-wave"></span>
-      <span class="audio-wave"></span>
-      <span class="audio-label">Soundscape</span>
-    </button>
-  </div>
+                serviceCards.forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
 
-  <script src="app.js"></script>
+        // 4. Before & After Transformation Slider
+        const baViewport = document.getElementById('ba-viewport');
+        const baClipped = document.getElementById('ba-clipped');
+        const baHandle = document.getElementById('ba-handle');
+
+        if (baViewport && baClipped && baHandle) {
+            let isDragging = false;
+
+            function syncInnerImageWidth() {
+                const containerWidth = baViewport.clientWidth;
+                const innerImg = baClipped.querySelector('.ba-image');
+                if (innerImg) {
+                    innerImg.style.width = containerWidth + 'px';
+                }
+            }
+
+            function updateSlider(clientX) {
+                const rect = baViewport.getBoundingClientRect();
+                let offsetX = clientX - rect.left;
+                let pct = (offsetX / rect.width) * 100;
+                pct = Math.max(0, Math.min(100, pct));
+                baClipped.style.width = pct + '%';
+                baHandle.style.left = pct + '%';
+            }
+
+            baViewport.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                updateSlider(e.clientX);
+            });
+            window.addEventListener('mousemove', (e) => {
+                if (!isDragging) return;
+                updateSlider(e.clientX);
+            });
+            window.addEventListener('mouseup', () => isDragging = false);
+
+            baViewport.addEventListener('touchstart', (e) => {
+                isDragging = true;
+                if (e.touches && e.touches[0]) updateSlider(e.touches[0].clientX);
+            }, { passive: true });
+            window.addEventListener('touchmove', (e) => {
+                if (!isDragging) return;
+                if (e.touches && e.touches[0]) updateSlider(e.touches[0].clientX);
+            }, { passive: true });
+            window.addEventListener('touchend', () => isDragging = false);
+
+            window.addEventListener('resize', syncInnerImageWidth);
+            window.addEventListener('load', syncInnerImageWidth);
+            syncInnerImageWidth();
+        }
+
+        // 5. Interactive Booking Modal
+        const modalOverlay = document.getElementById('booking-modal-overlay');
+        const modalCloseX = document.getElementById('modal-close-x');
+        const modalCancelBtn = document.getElementById('modal-cancel-btn');
+        const modalConfirmBtn = document.getElementById('modal-confirm-btn');
+        const openModalBtns = document.querySelectorAll('.open-modal-btn');
+        const bookingFieldsView = document.getElementById('booking-fields-view');
+        const bookingSuccessView = document.getElementById('booking-success-view');
+        const modalFooterNav = document.getElementById('modal-footer-nav');
+
+        const bookServiceSelect = document.getElementById('book-service');
+        const bookStylistSelect = document.getElementById('book-stylist');
+        const bookDateInput = document.getElementById('book-date');
+        const timeSlotBtns = document.querySelectorAll('.slot-btn');
+        let selectedTime = '10:00 AM';
+
+        // Set default date to tomorrow
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        if (bookDateInput) {
+            bookDateInput.value = tomorrow.toISOString().split('T')[0];
+            bookDateInput.min = new Date().toISOString().split('T')[0];
+        }
+
+        timeSlotBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                timeSlotBtns.forEach(b => b.classList.remove('selected'));
+                btn.classList.add('selected');
+                selectedTime = btn.dataset.time;
+            });
+        });
+
+        function openModal(serviceName) {
+            if (serviceName && bookServiceSelect) {
+                for (let option of bookServiceSelect.options) {
+                    if (option.value === serviceName) {
+                        option.selected = true;
+                        break;
+                    }
+                }
+            }
+            bookingFieldsView.style.display = 'block';
+            bookingSuccessView.style.display = 'none';
+            modalFooterNav.style.display = 'flex';
+            modalOverlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+            closeDrawer();
+        }
+
+        function closeModal() {
+            modalOverlay.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        openModalBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                openModal(btn.dataset.service);
+            });
+        });
+
+        if (modalCloseX) modalCloseX.addEventListener('click', closeModal);
+        if (modalCancelBtn) modalCancelBtn.addEventListener('click', closeModal);
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) closeModal();
+        });
+
+        // 6. Handle Booking Submission & Calendar Generation
+        const bookingForm = document.getElementById('booking-form');
+        bookingForm.addEventListener('submit', () => {
+            const clientName = document.getElementById('client-name').value.trim();
+            const clientPhone = document.getElementById('client-phone').value.trim();
+            const service = bookServiceSelect.value;
+            const stylist = bookStylistSelect.value;
+            const date = bookDateInput.value;
+
+            if (!clientName || !clientPhone) {
+                alert('Please fill in your name and phone number.');
+                return;
+            }
+
+            const randomRef = 'LUXE-' + Math.floor(1000 + Math.random() * 9000);
+            document.getElementById('confirmed-ref').textContent = '#' + randomRef;
+            document.getElementById('summary-meta-text').textContent = `${service} with ${stylist} on ${date} at ${selectedTime}`;
+
+            // Build Google Calendar Link
+            const [y, m, d] = date.split('-');
+            const gcalDate = `${y}${m}${d}T100000Z/${y}${m}${d}T120000Z`;
+            const gcalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent('Luxe Locks Hair Appointment: ' + service)}&dates=${gcalDate}&details=${encodeURIComponent('Appointment with ' + stylist + ' at Luxe Locks Studio NYC. Ref: #' + randomRef)}&location=${encodeURIComponent('245 Fashion Ave, Suite 12, New York, NY 10001')}`;
+            document.getElementById('gcal-btn').href = gcalUrl;
+
+            // Build .ICS download
+            document.getElementById('ics-btn').onclick = () => {
+                const icsData = [
+                    'BEGIN:VCALENDAR',
+                    'VERSION:2.0',
+                    'BEGIN:VEVENT',
+                    `UID:${randomRef}@luxelocks.studio`,
+                    `SUMMARY:Luxe Locks Hair Session: ${service}`,
+                    `DESCRIPTION:Appointment with ${stylist}. Ref #${randomRef}`,
+                    'LOCATION:245 Fashion Ave, Suite 12, New York, NY 10001',
+                    `DTSTART:${y}${m}${d}T100000Z`,
+                    `DTEND:${y}${m}${d}T120000Z`,
+                    'END:VEVENT',
+                    'END:VCALENDAR'
+                ].join('\r\n');
+
+                const blob = new Blob([icsData], { type: 'text/calendar;charset=utf-8' });
+                const link = document.createElement('a');
+                link.href = URL.createObjectURL(blob);
+                link.download = `Luxe_Locks_${randomRef}.ics`;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            };
+
+            bookingFieldsView.style.display = 'none';
+            bookingSuccessView.style.display = 'block';
+            modalFooterNav.style.display = 'none';
+        });
+    </script>
 </body>
 </html>
