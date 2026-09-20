@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muella♥️🫢 Locks Studio — Premium Hair Styling & Haute Color</title>
-    <meta name="description" content="Muella♥️🫢 Locks Studio — Haute coiffure, precision cuts, bespoke balayage, silk presses, and restorative hair treatments in New York City.">
+    <title>Muella♥️🫢Locks — Premium Hair Styling & Haute Color</title>
+    <meta name="description" content="Muella♥️🫢Locks — Haute coiffure, precision cuts, bespoke balayage, silk presses, and restorative hair treatments in New York City.">
     
     <!-- Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1250,7 +1250,7 @@
     <!-- Navigation -->
     <nav id="navbar">
         <a href="#home" class="logo">
-            <span class="logo-icon">✦</span> Muella♥️🫢 Locks
+            <span class="logo-icon">✦</span> Muella♥️🫢Locks
         </a>
 
         <ul class="nav-links">
@@ -1278,7 +1278,7 @@
     <div class="drawer-overlay" id="drawer-overlay"></div>
     <aside class="mobile-drawer" id="mobile-drawer">
         <div class="drawer-header">
-            <div class="logo"><span class="logo-icon">✦</span> Muella♥️🫢 Locks</div>
+            <div class="logo"><span class="logo-icon">✦</span> Muella♥️🫢Locks</div>
             <button type="button" class="modal-close-btn" id="drawer-close-btn">✕</button>
         </div>
         <ul class="drawer-nav-list">
@@ -1507,7 +1507,7 @@
                     <div class="gold-line" style="margin: 0 0 18px;"></div>
                     <span class="section-tag" style="color: var(--gold-light);">Artisan Philosophy</span>
                     <h2>Crafted with Passion,<br>Styled with Precision</h2>
-                    <p>At Muella♥️🫢 Locks Studio, hair is treated as your primary couture piece. Founded by editorial director Isabella Monroe, our studio has shaped silhouettes and refined confidence for discerning clients across Manhattan.</p>
+                    <p>At Muella♥️🫢Locks, hair is treated as your primary couture piece. Founded by editorial director Isabella Monroe, our studio has shaped silhouettes and refined confidence for discerning clients across Manhattan.</p>
                     <p>We blend Japanese organic bond chemistry with timeless French hand-painting. Every guest enjoys private acoustic seating, artisanal espresso, and our signature botanical scalp massage.</p>
                     <div class="stats">
                         <div class="stat">
@@ -1601,13 +1601,13 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Muella♥️🫢 Locks Studio. All rights reserved. | Haute Coiffure Excellence.</p>
+        <p>&copy; 2026 Muella♥️🫢Locks. All rights reserved. | Haute Coiffure Excellence.</p>
     </footer>
 
     <!-- Sticky Mobile Booking Bar -->
     <div class="sticky-mobile-bar">
         <div class="mobile-bar-info">
-            <strong>Muella♥️🫢 Locks Studio</strong>
+            <strong>Muella♥️🫢Locks</strong>
             <span>✦ NYC Fashion District</span>
         </div>
         <button type="button" class="mobile-bar-btn open-modal-btn">
@@ -1900,7 +1900,7 @@
             // Build Google Calendar Link
             const [y, m, d] = date.split('-');
             const gcalDate = `${y}${m}${d}T100000Z/${y}${m}${d}T120000Z`;
-            const gcalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent('Muella♥️🫢 Locks Hair Appointment: ' + service)}&dates=${gcalDate}&details=${encodeURIComponent('Appointment with ' + stylist + ' at Muella♥️🫢 Locks Studio NYC. Ref: #' + randomRef)}&location=${encodeURIComponent('245 Fashion Ave, Suite 12, New York, NY 10001')}`;
+            const gcalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent('Muella♥️🫢Locks Hair Appointment: ' + service)}&dates=${gcalDate}&details=${encodeURIComponent('Appointment with ' + stylist + ' at Muella♥️🫢Locks NYC. Ref: #' + randomRef)}&location=${encodeURIComponent('245 Fashion Ave, Suite 12, New York, NY 10001')}`;
             document.getElementById('gcal-btn').href = gcalUrl;
 
             // Build .ICS download
@@ -1910,7 +1910,7 @@
                     'VERSION:2.0',
                     'BEGIN:VEVENT',
                     `UID:${randomRef}@luxelocks.studio`,
-                    `SUMMARY:Muella♥️🫢 Locks Hair Session: ${service}`,
+                    `SUMMARY:Muella♥️🫢Locks Hair Session: ${service}`,
                     `DESCRIPTION:Appointment with ${stylist}. Ref #${randomRef}`,
                     'LOCATION:245 Fashion Ave, Suite 12, New York, NY 10001',
                     `DTSTART:${y}${m}${d}T100000Z`,
@@ -1922,7 +1922,7 @@
                 const blob = new Blob([icsData], { type: 'text/calendar;charset=utf-8' });
                 const link = document.createElement('a');
                 link.href = URL.createObjectURL(blob);
-                link.download = `Muella_Locks_${randomRef}.ics`;
+                link.download = `MuellaLocks_${randomRef}.ics`;
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
