@@ -2695,3 +2695,598 @@ button, a {
   from { opacity: 1; transform: translateX(0); }
   to { opacity: 0; transform: translateX(-40px); }
 }
+
+/* ==========================================================================
+   ULTRA-RESPONSIVE ARCHITECTURE: MOBILE, TABLET & SMALL SCREEN OPTIMIZATIONS
+   ========================================================================== */
+
+/* Universal Responsive Fixes */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* iOS Safari Input Auto-Zoom Fix */
+@media (max-width: 768px) {
+  input, select, textarea, .form-input, .form-select {
+    font-size: 16px !important;
+  }
+}
+
+/* ---------- 1. TABLET & LAPTOP (max-width: 992px) ---------- */
+@media (max-width: 992px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .hero-content {
+    text-align: left;
+  }
+  .hero-title {
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+  }
+  .customizer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .customizer-calc-card {
+    position: static;
+    top: auto;
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .atelier-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .atelier-image-card {
+    max-height: 440px;
+    overflow: hidden;
+  }
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .stylists-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---------- 2. LARGE MOBILE & TABLET (max-width: 768px) ---------- */
+@media (max-width: 768px) {
+  /* Container & Spacing */
+  .container {
+    padding: 0 1.25rem;
+  }
+  .section-header {
+    margin-bottom: 2rem;
+  }
+  .section-title {
+    font-size: clamp(1.85rem, 5vw, 2.5rem);
+  }
+  .section-sub {
+    font-size: 0.88rem;
+  }
+
+  /* Header adjustments */
+  .nav-container {
+    height: 64px;
+    padding: 0 1.25rem;
+  }
+  .brand-monogram {
+    width: 34px;
+    height: 34px;
+    font-size: 1.2rem;
+  }
+  .brand-title {
+    font-size: 1.25rem;
+  }
+  .brand-subtitle {
+    font-size: 0.55rem;
+  }
+
+  /* Hide crowded header actions on mobile; they are in the drawer & sticky bar */
+  #portal-open-btn,
+  #nav-book-btn {
+    display: none;
+  }
+  #soundscape-nav-btn {
+    padding: 0.4rem 0.65rem;
+  }
+  #soundscape-nav-btn .sound-text {
+    display: none;
+  }
+
+  /* Hero Section Mobile */
+  .hero-section {
+    padding: 2rem 0 3.5rem;
+  }
+  .badge-tag {
+    font-size: 0.68rem;
+    padding: 0.3rem 0.75rem;
+  }
+  .hero-title {
+    font-size: 2.35rem;
+    line-height: 1.15;
+    margin: 0.75rem 0 1rem;
+  }
+  .hero-lead {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  .hero-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .hero-stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    padding-top: 1.25rem;
+    text-align: center;
+  }
+  .stat-num {
+    font-size: 1.45rem;
+  }
+  .stat-label {
+    font-size: 0.68rem;
+  }
+  .hero-floating-pill {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    margin-top: 1rem;
+    padding: 0.85rem 1rem;
+    border-radius: var(--radius-md);
+  }
+
+  /* Transformation Slider Mobile */
+  .transformation-section {
+    padding: 3.5rem 0;
+  }
+  .ba-slider-container {
+    padding: 0.75rem;
+    border-radius: var(--radius-md);
+  }
+  .ba-viewport {
+    aspect-ratio: 4 / 5;
+    max-height: 460px;
+    border-radius: var(--radius-sm);
+  }
+  .ba-tag {
+    top: 0.75rem;
+    padding: 0.25rem 0.65rem;
+    font-size: 0.65rem;
+  }
+  .ba-tag-before { right: 0.75rem; }
+  .ba-tag-after { left: 0.75rem; }
+  .ba-handle-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 0.85rem;
+  }
+  .ba-footer-card {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0.75rem 0.25rem 0.25rem;
+    gap: 0.85rem;
+  }
+  .ba-details h4 {
+    font-size: 1.1rem;
+  }
+  .ba-details p {
+    font-size: 0.8rem;
+  }
+  .ba-footer-card .btn {
+    width: 100%;
+  }
+
+  /* Hair Diagnostic Mobile */
+  .diagnostic-section {
+    padding: 3.5rem 0;
+  }
+  .diagnostic-card {
+    padding: 1.35rem 1rem;
+    border-radius: var(--radius-md);
+  }
+  .quiz-stepper {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.4rem;
+    padding-bottom: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+  .quiz-step {
+    font-size: 0.72rem;
+  }
+  .quiz-question-title {
+    font-size: 1.15rem;
+    margin-bottom: 1.15rem;
+  }
+  .quiz-options-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  .quiz-option {
+    padding: 1.1rem;
+  }
+  .quiz-option h5 {
+    font-size: 0.95rem;
+  }
+  .quiz-option p {
+    font-size: 0.78rem;
+  }
+  .quiz-result-card {
+    padding: 1.35rem 1rem;
+  }
+  .result-title {
+    font-size: 1.45rem;
+  }
+  .result-desc {
+    font-size: 0.85rem;
+  }
+  .result-specs-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+  .result-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+  .result-actions .btn {
+    width: 100%;
+  }
+
+  /* Services Mobile Tabs & Cards */
+  .services-section {
+    padding: 3.5rem 0;
+  }
+  .category-tabs {
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.75rem;
+  }
+  .tab-btn {
+    padding: 0.55rem 1.1rem;
+    font-size: 0.78rem;
+  }
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .service-card {
+    padding: 1.35rem;
+  }
+  .service-title {
+    font-size: 1.25rem;
+  }
+  .service-desc {
+    font-size: 0.85rem;
+  }
+  .service-perks li {
+    font-size: 0.78rem;
+  }
+  .service-footer {
+    padding-top: 1rem;
+  }
+
+  /* Package Customizer Mobile */
+  .customizer-section {
+    padding: 3.5rem 0;
+  }
+  .addon-checkbox-label {
+    padding: 0.75rem;
+  }
+  .addon-title {
+    font-size: 0.85rem;
+  }
+  .addon-sub {
+    font-size: 0.75rem;
+  }
+  .customizer-calc-card {
+    padding: 1.35rem;
+  }
+
+  /* Lookbook Gallery Mobile */
+  .gallery-section {
+    padding: 3.5rem 0;
+  }
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .gallery-item {
+    aspect-ratio: 4 / 5;
+  }
+
+  /* Stylists Mobile */
+  .stylists-section {
+    padding: 3.5rem 0;
+  }
+  .stylists-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .stylist-img-wrap {
+    height: 320px;
+  }
+  .stylist-content {
+    padding: 1.35rem;
+  }
+
+  /* Reviews Toolbar Mobile */
+  .reviews-section {
+    padding: 3.5rem 0;
+  }
+  .reviews-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+  .review-filter-pills {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 0.5rem;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .review-pill-btn {
+    white-space: nowrap;
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+  }
+  .reviews-toolbar .btn {
+    width: 100%;
+  }
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Footer Mobile */
+  .site-footer {
+    padding: 3.5rem 0 2rem;
+  }
+  .footer-grid {
+    gap: 2.25rem;
+    margin-bottom: 2.5rem;
+  }
+  .newsletter-form {
+    flex-direction: column;
+  }
+  .newsletter-form .btn {
+    width: 100%;
+  }
+
+  /* Floating Widgets Positioning (Clear of Mobile Bottom Bar) */
+  .floating-audio-widget {
+    bottom: calc(76px + env(safe-area-inset-bottom, 0px));
+    right: 12px;
+  }
+  .audio-widget-toggle {
+    padding: 0.45rem 0.8rem;
+    font-size: 0.75rem;
+  }
+  .live-toast-container {
+    bottom: calc(76px + env(safe-area-inset-bottom, 0px));
+    left: 12px;
+    right: 12px;
+    max-width: calc(100% - 24px);
+  }
+  .live-toast {
+    max-width: 100%;
+    padding: 0.75rem 0.85rem;
+  }
+}
+
+/* ---------- 3. MOBILE MODALS (NATIVE BOTTOM-SHEET EXPERIENCE) ---------- */
+@media (max-width: 640px) {
+  .modal-backdrop {
+    padding: 0;
+    align-items: flex-end;
+  }
+  
+  .booking-modal,
+  .portal-modal,
+  .lookbook-modal {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    border-radius: 22px 22px 0 0 !important;
+    max-height: 93vh !important;
+    border-bottom: none !important;
+    transform: translateY(100%) !important;
+  }
+  
+  .modal-backdrop.open .booking-modal,
+  .modal-backdrop.open .portal-modal,
+  .modal-backdrop.open .lookbook-modal {
+    transform: translateY(0) !important;
+  }
+
+  .modal-header {
+    padding: 1.25rem 1.25rem 0.85rem;
+  }
+  .modal-header h3 {
+    font-size: 1.15rem !important;
+  }
+  .modal-body {
+    padding: 1rem 1.25rem 1.5rem;
+  }
+  .modal-footer {
+    padding: 0.85rem 1.25rem calc(0.85rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  /* Wizard Progress Step indicators */
+  .wizard-progress {
+    padding: 0.65rem 1rem;
+    gap: 0.25rem;
+  }
+  .wizard-step-node {
+    font-size: 0.68rem;
+    gap: 0.35rem;
+  }
+  .step-node-num {
+    width: 22px;
+    height: 22px;
+    font-size: 0.65rem;
+  }
+
+  /* Wizard Step 1: Services list */
+  .service-pick-grid {
+    max-height: 250px;
+  }
+  .service-pick-item {
+    padding: 0.75rem 0.9rem;
+  }
+  .pick-item-info h5 {
+    font-size: 0.88rem;
+  }
+  .pick-item-info span {
+    font-size: 0.7rem;
+  }
+  .pick-item-price {
+    font-size: 1.05rem;
+  }
+
+  /* Wizard Step 2: Stylist pick */
+  .stylist-pick-grid {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+  .stylist-pick-card {
+    padding: 0.75rem 0.9rem;
+  }
+
+  /* Wizard Step 3: Date & Time */
+  .time-slots-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+  .time-slot-btn {
+    padding: 0.6rem 0.5rem;
+    font-size: 0.75rem;
+  }
+
+  /* Wizard Step 4: Summary */
+  .booking-summary-box {
+    padding: 0.9rem 1rem;
+    margin-bottom: 1.25rem;
+  }
+  .summary-row {
+    font-size: 0.8rem;
+    margin-bottom: 0.4rem;
+  }
+  .client-form-grid {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  /* Wizard Step 5: Calendar Action Buttons */
+  .calendar-action-row {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+  }
+  .calendar-action-row .btn {
+    width: 100%;
+  }
+
+  /* Lookbook Lightbox Modal on Mobile */
+  .lookbook-modal-grid {
+    grid-template-columns: 1fr;
+  }
+  .lookbook-modal-img-wrap {
+    height: 220px;
+    min-height: 220px;
+  }
+  .lookbook-modal-content {
+    padding: 1.25rem;
+  }
+  .lookbook-modal-content h3 {
+    font-size: 1.35rem !important;
+  }
+  .lookbook-specs {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+  .lb-spec {
+    padding: 0.6rem;
+  }
+  .lb-spec strong {
+    font-size: 0.78rem;
+  }
+
+  /* Client & Staff Portal Mobile */
+  .portal-tabs {
+    padding: 0 1rem;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .portal-tab-btn {
+    padding: 0.75rem 0.85rem;
+    font-size: 0.78rem;
+  }
+  .lookup-input-row {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .lookup-input-row .btn {
+    width: 100%;
+  }
+  .admin-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.65rem;
+  }
+  .admin-stats {
+    justify-content: space-between;
+  }
+  .admin-actions {
+    display: flex;
+    width: 100%;
+    gap: 0.5rem;
+  }
+  .admin-actions .btn {
+    flex: 1;
+    padding: 0.5rem;
+    text-align: center;
+  }
+  .admin-filters-row {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .admin-table {
+    font-size: 0.75rem;
+  }
+  .admin-table th, .admin-table td {
+    padding: 0.55rem 0.65rem;
+  }
+}
+
+/* ---------- 4. SMALL PHONES (max-width: 380px) ---------- */
+@media (max-width: 380px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  .stat-num {
+    font-size: 1.25rem;
+  }
+  .hero-stats-row {
+    gap: 0.25rem;
+  }
+  .wizard-step-node span:not(.step-node-num) {
+    display: none; /* Show only step numbers on extremely narrow screens */
+  }
+  .wizard-progress {
+    justify-content: space-around;
+  }
+}
+
