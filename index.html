@@ -1,0 +1,1521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ÉLIXIR ATELIER — Haute Coiffure & Bespoke Hair Artistry</title>
+  <meta name="description" content="Experience high-fashion hair architecture, dimensional balayage, precision cutting, luxury silk presses, and bespoke protective styling at Élixir Atelier.">
+  <meta name="theme-color" content="#0A0B0E">
+
+  <!-- Typography: Cormorant Garamond & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ================= HEADER & NAVIGATION ================= -->
+  <header class="site-header" id="header">
+    <div class="nav-container">
+      <a href="#hero" class="brand-logo" aria-label="Élixir Atelier Home">
+        <div class="brand-monogram">É</div>
+        <div class="brand-text">
+          <span class="brand-title">ÉLIXIR</span>
+          <span class="brand-subtitle">ATELIER</span>
+        </div>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#transformations">Transformations</a></li>
+          <li><a href="#diagnostic">Hair Diagnostic</a></li>
+          <li><a href="#services">Services & Pricing</a></li>
+          <li><a href="#atelier">The Atelier</a></li>
+          <li><a href="#lookbook">Lookbook</a></li>
+          <li><a href="#stylists">Stylists</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Ambient Soundscape Toggle Button -->
+        <button type="button" class="btn btn-icon-glass soundscape-toggle-btn" id="soundscape-nav-btn" title="Toggle Atelier Ambient Soundscape" aria-label="Toggle Atelier Ambient Soundscape">
+          <span class="sound-icon">♫</span>
+          <span class="sound-text">Atmosphere</span>
+        </button>
+
+        <!-- Client & Admin Portal Button -->
+        <button type="button" class="btn btn-outline btn-sm" id="portal-open-btn">
+          <span>Atelier Portal</span>
+        </button>
+
+        <!-- Booking CTA -->
+        <button type="button" class="btn btn-primary btn-sm open-booking-btn" id="nav-book-btn">
+          <span>Book Appointment</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+
+        <button type="button" class="hamburger-btn" id="mobile-menu-open" aria-label="Open mobile menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Off-Canvas Drawer -->
+  <div class="mobile-drawer-overlay" id="drawer-overlay"></div>
+  <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation Menu">
+    <div class="drawer-header">
+      <div class="brand-logo">
+        <div class="brand-monogram">É</div>
+        <div class="brand-text">
+          <span class="brand-title">ÉLIXIR</span>
+          <span class="brand-subtitle">ATELIER</span>
+        </div>
+      </div>
+      <button type="button" class="drawer-close" id="mobile-menu-close" aria-label="Close menu">✕</button>
+    </div>
+
+    <ul class="drawer-nav-list">
+      <li><a href="#transformations" class="drawer-link">Transformations <span>→</span></a></li>
+      <li><a href="#diagnostic" class="drawer-link">AI Hair Diagnostic <span>→</span></a></li>
+      <li><a href="#services" class="drawer-link">Services & Pricing <span>→</span></a></li>
+      <li><a href="#customizer" class="drawer-link">Package Customizer <span>→</span></a></li>
+      <li><a href="#atelier" class="drawer-link">The Atelier Experience <span>→</span></a></li>
+      <li><a href="#lookbook" class="drawer-link">Curated Lookbook <span>→</span></a></li>
+      <li><a href="#stylists" class="drawer-link">Master Stylists <span>→</span></a></li>
+      <li><a href="#reviews" class="drawer-link">Client Reviews <span>→</span></a></li>
+      <li><a href="#portal" class="drawer-link" id="mobile-portal-link">Client & Staff Portal <span>→</span></a></li>
+    </ul>
+
+    <div class="drawer-footer">
+      <button type="button" class="btn btn-primary open-booking-btn" style="width: 100%; margin-bottom: 0.75rem;">
+        Book Session Now
+      </button>
+      <button type="button" class="btn btn-outline soundscape-toggle-btn" style="width: 100%;">
+        <span>♫ Toggle Ambient Soundscape</span>
+      </button>
+      <div class="drawer-hours">
+        <p><strong>Studio Hours:</strong> Tue – Sun: 9:00 AM – 8:00 PM</p>
+        <p>📍 450 Madison Avenue, New York, NY</p>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <!-- ================= HERO SECTION ================= -->
+    <section class="hero-section" id="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <span class="badge-tag">
+              <span class="pulse-dot"></span>
+              Accepting Appointments For 2026
+            </span>
+            <h1 class="hero-title">
+              Sculpting Confidence Through <span class="gold-text">Bespoke Hair Artistry</span>
+            </h1>
+            <p class="hero-lead">
+              Where Parisian coiffure craftsmanship meets modern hair architecture. Experience dimensional balayage, silk glass blowouts, precision haircuts, and protective mastery tailored to your signature beauty.
+            </p>
+            <div class="hero-actions">
+              <button type="button" class="btn btn-primary open-booking-btn" id="hero-book-btn">
+                <span>Reserve Your Experience</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+              <a href="#diagnostic" class="btn btn-outline">
+                <span>Hair Diagnostic Quiz ✨</span>
+              </a>
+            </div>
+
+            <div class="hero-stats-row">
+              <div class="stat-item">
+                <span class="stat-num">4.98★</span>
+                <span class="stat-label">Client Rating</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-num">3,200+</span>
+                <span class="stat-label">Transformations</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-num">100%</span>
+                <span class="stat-label">Cruelty-Free Care</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="hero-image-wrapper">
+              <img src="images/hero.jpg" alt="Élixir Atelier luxury salon client with voluminous honey balayage waves" width="1280" height="880" loading="eager">
+              <div class="hero-floating-pill">
+                <div class="floating-pill-info">
+                  <div class="floating-pill-avatar">
+                    <img src="images/stylist.jpg" alt="Master Stylist Camille">
+                  </div>
+                  <div>
+                    <div class="floating-pill-name">Camille Laurent</div>
+                    <div class="floating-pill-status">
+                      <span class="pulse-dot"></span> In Atelier Today • 3 Slots Open
+                    </div>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-outline btn-sm open-booking-btn" data-stylist="Camille Laurent">
+                  Book
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= BEFORE & AFTER INTERACTIVE TRANSFORMATION ================= -->
+    <section class="transformation-section" id="transformations">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Real Results</span>
+          <h2 class="section-title">The Power of <span class="gold-text">Transformation</span></h2>
+          <p class="section-sub">Drag the gold divider left and right to witness the radiance, silk finish, and dimensional depth created by our master colorists.</p>
+        </div>
+
+        <div class="ba-slider-container">
+          <div class="ba-viewport" id="ba-viewport">
+            <!-- Background Image: BEFORE -->
+            <img src="images/before.jpg" alt="Hair before balayage transformation" class="ba-image">
+            <span class="ba-tag ba-tag-before">Before (Dry / Faded Ends)</span>
+
+            <!-- Clipped Overlay Image: AFTER -->
+            <div class="ba-after-wrapper" id="ba-after-wrapper">
+              <img src="images/after.jpg" alt="Hair after luxury honey balayage transformation" class="ba-image">
+              <span class="ba-tag ba-tag-after">After (Honey Balayage & Glaze)</span>
+            </div>
+
+            <!-- Draggable Divider Line & Handle -->
+            <div class="ba-handle" id="ba-handle">
+              <div class="ba-handle-btn" aria-label="Drag slider to compare before and after">
+                <span>◄ ►</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="ba-footer-card">
+            <div class="ba-details">
+              <h4>Signature Caramel Honey Balayage & Bond Therapy</h4>
+              <p>Completed in 2 hrs 45 mins • Includes Scalp Ritual, Fiber Clinix Bond Rebuilder & Silk Blowout</p>
+            </div>
+            <button type="button" class="btn btn-primary open-booking-btn" data-service="Caramel Honey Balayage & Glaze">
+              <span>Book This Transformation</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= THE ÉLIXIR HAIR DIAGNOSTIC CONCIERGE ================= -->
+    <section class="diagnostic-section" id="diagnostic">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Virtual Concierge</span>
+          <h2 class="section-title">The Élixir <span class="gold-text">Hair Diagnostic</span></h2>
+          <p class="section-sub">Discover your personalized salon prescription, matched master stylist, and time investment in 60 seconds.</p>
+        </div>
+
+        <div class="diagnostic-card">
+          <!-- Diagnostic Stepper -->
+          <div class="quiz-stepper">
+            <div class="quiz-step active" data-step="1">1. Texture & Pattern</div>
+            <div class="quiz-step" data-step="2">2. Current State</div>
+            <div class="quiz-step" data-step="3">3. Transformation Goal</div>
+            <div class="quiz-step" data-step="4">4. Maintenance Level</div>
+          </div>
+
+          <!-- Step 1: Hair Texture -->
+          <div class="quiz-step-pane active" id="quiz-pane-1">
+            <h3 class="quiz-question-title">What is your natural hair texture and density?</h3>
+            <div class="quiz-options-grid">
+              <div class="quiz-option" data-name="texture" data-value="straight-wavy">
+                <div class="option-icon">✨</div>
+                <h5>Straight to Gentle Waves</h5>
+                <p>Type 1A - 2B • Fine to medium density, seeks body and dimensional shine.</p>
+              </div>
+              <div class="quiz-option" data-name="texture" data-value="curly">
+                <div class="option-icon">🌀</div>
+                <h5>Defined Curls & Ringlets</h5>
+                <p>Type 3A - 3C • Medium to high density, craves moisture and frizz control.</p>
+              </div>
+              <div class="quiz-option" data-name="texture" data-value="coily">
+                <div class="option-icon">👑</div>
+                <h5>Coily, Kinky & Afro Texture</h5>
+                <p>Type 4A - 4C • High density, loves protective knotless styling & liquid silk presses.</p>
+              </div>
+              <div class="quiz-option" data-name="texture" data-value="fine-fragile">
+                <div class="option-icon">🌸</div>
+                <h5>Fine, Fragile or Thinning</h5>
+                <p>Delicate strand structure needing gentle bond repair and non-stripping organic formulations.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2: Current Condition -->
+          <div class="quiz-step-pane" id="quiz-pane-2">
+            <h3 class="quiz-question-title">How would you describe your hair's current condition?</h3>
+            <div class="quiz-options-grid">
+              <div class="quiz-option" data-name="condition" data-value="virgin">
+                <div class="option-icon">🌿</div>
+                <h5>Virgin / Natural</h5>
+                <p>No recent chemical dyes, bleach, or relaxers in the last 12 months.</p>
+              </div>
+              <div class="quiz-option" data-name="condition" data-value="colored">
+                <div class="option-icon">🎨</div>
+                <h5>Color-Treated / Bleached</h5>
+                <p>Existing highlights, balayage, or single process color needing gloss refresh.</p>
+              </div>
+              <div class="quiz-option" data-name="condition" data-value="damaged">
+                <div class="option-icon">⚡</div>
+                <h5>Heat or Chemical Distress</h5>
+                <p>Split ends, dryness, or elasticity loss requiring molecular bond rebuilding.</p>
+              </div>
+              <div class="quiz-option" data-name="condition" data-value="dry-transitioning">
+                <div class="option-icon">💧</div>
+                <h5>Dry / Transitioning</h5>
+                <p>In between textures, craving intensive botanical steam hydration therapy.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3: Desired Goal -->
+          <div class="quiz-step-pane" id="quiz-pane-3">
+            <h3 class="quiz-question-title">What is your primary transformation vision?</h3>
+            <div class="quiz-options-grid">
+              <div class="quiz-option" data-name="goal" data-value="balayage">
+                <div class="option-icon">✨</div>
+                <h5>Sun-Kissed Dimensional Balayage</h5>
+                <p>Natural French hand-painted ribbons with gloss glaze and runway blowout.</p>
+              </div>
+              <div class="quiz-option" data-name="goal" data-value="silkpress">
+                <div class="option-icon">🪞</div>
+                <h5>Mirror-Shine Liquid Silk Press</h5>
+                <p>Chemical-free glass hair straightening with full natural curl pattern preservation.</p>
+              </div>
+              <div class="quiz-option" data-name="goal" data-value="braids">
+                <div class="option-icon">💫</div>
+                <h5>Bohemian Knotless Braids</h5>
+                <p>Featherweight protective styling with human hair curls and regal gold cuffs.</p>
+              </div>
+              <div class="quiz-option" data-name="goal" data-value="cut-repair">
+                <div class="option-icon">✂️</div>
+                <h5>Architectural Cut & Molecular Repair</h5>
+                <p>Face-framing silhouette cut paired with K18 peptide bond therapy.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 4: Maintenance -->
+          <div class="quiz-step-pane" id="quiz-pane-4">
+            <h3 class="quiz-question-title">What is your ideal salon maintenance cadence?</h3>
+            <div class="quiz-options-grid">
+              <div class="quiz-option" data-name="maintenance" data-value="low">
+                <div class="option-icon">⏳</div>
+                <h5>Low Maintenance (3–5 Months)</h5>
+                <p>Grows out seamlessly with no harsh root line or frequent salon visits.</p>
+              </div>
+              <div class="quiz-option" data-name="maintenance" data-value="medium">
+                <div class="option-icon">📅</div>
+                <h5>Seasonal Refresh (6–8 Weeks)</h5>
+                <p>Love keeping gloss tones, protective styles, and trims crisp and elevated.</p>
+              </div>
+              <div class="quiz-option" data-name="maintenance" data-value="high">
+                <div class="option-icon">🥂</div>
+                <h5>VIP Regular (2–4 Weeks)</h5>
+                <p>Weekly luxury blowouts, steam treatments, and immaculate styling maintenance.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Result Card (Generated Dynamically) -->
+          <div class="quiz-result-card" id="quiz-result-card" style="display: none;">
+            <div class="result-header">
+              <span class="badge-tag">✦ Customized Atelier Prescription</span>
+              <h3 id="result-regimen-title" class="result-title">Caramel Honey Balayage & Molecular Bond Therapy</h3>
+              <p id="result-regimen-desc" class="result-desc">A French free-hand balayage customized with high-gloss acidifying toner, Olaplex bond repair shield, and runway blowout.</p>
+            </div>
+
+            <div class="result-specs-grid">
+              <div class="spec-box">
+                <span class="spec-label">Matched Master Stylist</span>
+                <strong id="result-stylist-name">Camille Laurent</strong>
+                <span class="spec-sub" id="result-stylist-title">Color & Balayage Director</span>
+              </div>
+              <div class="spec-box">
+                <span class="spec-label">Recommended Add-On</span>
+                <strong id="result-addon-name">Botanical Gloss Glaze</strong>
+                <span class="spec-sub">Protects cuticle & adds 8-week shine</span>
+              </div>
+              <div class="spec-box">
+                <span class="spec-label">Estimated Duration</span>
+                <strong id="result-duration">160 Minutes</strong>
+                <span class="spec-sub">Includes scalp ritual & blowout</span>
+              </div>
+              <div class="spec-box">
+                <span class="spec-label">Estimated Investment</span>
+                <strong class="gold-text" id="result-price" style="font-size: 1.4rem;">$240</strong>
+                <span class="spec-sub">Transparent pricing</span>
+              </div>
+            </div>
+
+            <div class="result-actions">
+              <button type="button" class="btn btn-primary" id="book-quiz-prescription-btn">
+                <span>Book This Custom Prescription</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+              <button type="button" class="btn btn-outline" id="retake-quiz-btn">
+                ↻ Retake Diagnostic
+              </button>
+            </div>
+          </div>
+
+          <!-- Stepper Buttons -->
+          <div class="quiz-nav-footer" id="quiz-nav-footer">
+            <button type="button" class="btn btn-outline btn-sm" id="quiz-prev-btn" style="visibility: hidden;">
+              ← Back
+            </button>
+            <button type="button" class="btn btn-primary btn-sm" id="quiz-next-btn">
+              <span>Next Question</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SERVICES & TRANSPARENT PRICING ================= -->
+    <section class="services-section" id="services">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Menu & Rates</span>
+          <h2 class="section-title">Bespoke <span class="gold-text">Service Menu</span></h2>
+          <p class="section-sub">Transparent pricing with zero hidden fees. Every service includes our signature botanical scalp massage and artisanal refreshment bar.</p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="category-tabs" role="tablist">
+          <button type="button" class="tab-btn active" data-category="all">All Services</button>
+          <button type="button" class="tab-btn" data-category="color">Color & Balayage</button>
+          <button type="button" class="tab-btn" data-category="cuts">Precision Cuts & Styling</button>
+          <button type="button" class="tab-btn" data-category="silkpress">Silk Press & Texture</button>
+          <button type="button" class="tab-btn" data-category="braids">Protective & Braids</button>
+          <button type="button" class="tab-btn" data-category="treatments">Bond Treatments</button>
+        </div>
+
+        <!-- Services Grid -->
+        <div class="services-grid" id="services-grid">
+
+          <!-- Card 1 -->
+          <div class="service-card" data-category="color">
+            <div>
+              <div class="service-top">
+                <span class="service-category">Color & Balayage</span>
+                <span class="service-duration">⏱ 160 mins</span>
+              </div>
+              <h3 class="service-title">Caramel Honey Balayage & Glaze</h3>
+              <p class="service-desc">Hand-painted French balayage creating multidimensional radiance tailored to your facial contours and complexion.</p>
+              <ul class="service-perks">
+                <li>Bond-building Olaplex protection</li>
+                <li>Customized gloss toning glaze</li>
+                <li>Signature blowout & barrel wave finish</li>
+              </ul>
+            </div>
+            <div class="service-footer">
+              <div class="service-price">
+                <span class="price-prefix">Investment</span>
+                <span class="price-value">$240</span>
+              </div>
+              <button type="button" class="btn btn-outline btn-sm open-booking-btn" data-service="Caramel Honey Balayage & Glaze" data-price="$240" data-duration="160 mins">
+                Reserve
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="service-card" data-category="cuts">
+            <div>
+              <div class="service-top">
+                <span class="service-category">Cuts & Styling</span>
+                <span class="service-duration">⏱ 75 mins</span>
+              </div>
+              <h3 class="service-title">Architectural Precision Haircut</h3>
+              <p class="service-desc">Sculptural dry or wet cut mapped to your hair’s natural growth patterns, texture, and everyday lifestyle maintenance.</p>
+              <ul class="service-perks">
+                <li>Detailed consultation & shape analysis</li>
+                <li>Botanical scalp exfoliation wash</li>
+                <li>Voluminous runway blowout</li>
+              </ul>
+            </div>
+            <div class="service-footer">
+              <div class="service-price">
+                <span class="price-prefix">Investment</span>
+                <span class="price-value">$110</span>
+              </div>
+              <button type="button" class="btn btn-outline btn-sm open-booking-btn" data-service="Architectural Precision Haircut" data-price="$110" data-duration="75 mins">
+                Reserve
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="service-card" data-category="silkpress">
+            <div>
+              <div class="service-top">
+                <span class="service-category">Silk Press & Texture</span>
+                <span class="service-duration">⏱ 110 mins</span>
+              </div>
+              <h3 class="service-title">Liquid Glass Silk Press Ritual</h3>
+              <p class="service-desc">High-shine, lightweight straightening without chemical alteration. Leaves curls completely intact with mirror-like fluidity.</p>
+              <ul class="service-perks">
+                <li>Hydrating steam deep conditioning</li>
+                <li>Heat-activated diamond shield</li>
+                <li>Split-end feather trimming</li>
+              </ul>
+            </div>
+            <div class="service-footer">
+              <div class="service-price">
+                <span class="price-prefix">Investment</span>
+                <span class="price-value">$135</span>
+              </div>
+              <button type="button" class="btn btn-outline btn-sm open-booking-btn" data-service="Liquid Glass Silk Press Ritual" data-price="$135" data-duration="110 mins">
+                Reserve
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="service-card" data-category="braids">
+            <div>
+              <div class="service-top">
+                <span class="service-category">Protective & Braids</span>
+                <span class="service-duration">⏱ 210 mins</span>
+              </div>
+              <h3 class="service-title">Bohemian Goddess Knotless Braids</h3>
+              <p class="service-desc">Featherlight, tension-free knotless braids infused with wavy human hair curls and optional gold filigree cuffs.</p>
+              <ul class="service-perks">
+                <li>Zero-tension scalp friendly technique</li>
+                <li>Hydrating rosewater scalp spritz</li>
+                <li>Complimentary gold cuffs styling</li>
+              </ul>
+            </div>
+            <div class="service-footer">
+              <div class="service-price">
+                <span class="price-prefix">Investment</span>
+                <span class="price-value">$280</span>
+              </div>
+              <button type="button" class="btn btn-outline btn-sm open-booking-btn" data-service="Bohemian Goddess Knotless Braids" data-price="$280" data-duration="210 mins">
+                Reserve
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="service-card" data-category="color">
+            <div>
+              <div class="service-top">
+                <span class="service-category">Color & Balayage</span>
+                <span class="service-duration">⏱ 120 mins</span>
+              </div>
+              <h3 class="service-title">Full Dimension All-Over Gloss & Color</h3>
+              <p class="service-desc">Rich, deep espresso, chocolate velvet, or luminous copper transformation with high-definition light reflection.</p>
+              <ul class="service-perks">
+                <li>Ammonia-free organic color formula</li>
+                <li>Post-color acidifying moisture mask</li>
+                <li>Velvet blowout styling</li>
+              </ul>
+            </div>
+            <div class="service-footer">
+              <div class="service-price">
+                <span class="price-prefix">Investment</span>
+                <span class="price-value">$175</span>
+              </div>
+              <button type="button" class="btn btn-outline btn-sm open-booking-btn" data-service="Full Dimension All-Over Gloss & Color" data-price="$175" data-duration="120 mins">
+                Reserve
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="service-card" data-category="treatments">
+            <div>
+              <div class="service-top">
+                <span class="service-category">Bond Treatments</span>
+                <span class="service-duration">⏱ 90 mins</span>
+              </div>
+              <h3 class="service-title">K18 Molecular Peptide & Scalp Detox</h3>
+              <p class="service-desc">Reverses chemical and thermal damage at the molecular polypeptide chain level, restoring virgin hair strength and elasticity.</p>
+              <ul class="service-perks">
+                <li>Micromist steam therapy</li>
+                <li>Aromatherapeutic head & neck massage</li>
+                <li>Leave-in protective molecular barrier</li>
+              </ul>
+            </div>
+            <div class="service-footer">
+              <div class="service-price">
+                <span class="price-prefix">Investment</span>
+                <span class="price-value">$95</span>
+              </div>
+              <button type="button" class="btn btn-outline btn-sm open-booking-btn" data-service="K18 Molecular Peptide & Scalp Detox" data-price="$95" data-duration="90 mins">
+                Reserve
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= BESPOKE PACKAGE CUSTOMIZER & LIVE ESTIMATOR ================= -->
+    <section class="customizer-section" id="customizer">
+      <div class="container">
+        <div class="customizer-grid">
+          <div class="customizer-intro">
+            <span class="section-label">Live Estimator</span>
+            <h2 class="section-title">Design Your <span class="gold-text">Signature Package</span></h2>
+            <p class="hero-lead">
+              Pair your primary service with luxury restorative enhancements. Watch your estimated appointment duration and investment update live in real time.
+            </p>
+            <div class="customizer-service-select">
+              <label for="customizer-base-select">Select Primary Experience:</label>
+              <select id="customizer-base-select" class="form-select">
+                <option value="balayage" data-price="240" data-time="160" data-name="Caramel Honey Balayage & Glaze">Caramel Honey Balayage & Glaze ($240 • 160 mins)</option>
+                <option value="cut" data-price="110" data-time="75" data-name="Architectural Precision Haircut">Architectural Precision Haircut ($110 • 75 mins)</option>
+                <option value="silkpress" data-price="135" data-time="110" data-name="Liquid Glass Silk Press Ritual">Liquid Glass Silk Press Ritual ($135 • 110 mins)</option>
+                <option value="braids" data-price="280" data-time="210" data-name="Bohemian Goddess Knotless Braids">Bohemian Goddess Knotless Braids ($280 • 210 mins)</option>
+                <option value="gloss" data-price="175" data-time="120" data-name="Full Dimension All-Over Gloss & Color">Full Dimension All-Over Gloss & Color ($175 • 120 mins)</option>
+                <option value="k18" data-price="95" data-time="90" data-name="K18 Molecular Peptide & Scalp Detox">K18 Molecular Peptide & Scalp Detox ($95 • 90 mins)</option>
+              </select>
+            </div>
+
+            <div class="addon-checklist">
+              <span class="addon-heading">Curated Atelier Enhancements & Add-Ons:</span>
+
+              <label class="addon-checkbox-label">
+                <input type="checkbox" class="customizer-addon" data-id="gloss" data-name="Botanical Gloss Glaze" data-price="45" data-time="20">
+                <span class="checkbox-custom"></span>
+                <span class="addon-info">
+                  <span class="addon-title">Botanical High-Gloss Glaze (+ $45 • 20 mins)</span>
+                  <span class="addon-sub">Seals the cuticle, boosts shine & eliminates brassiness</span>
+                </span>
+              </label>
+
+              <label class="addon-checkbox-label">
+                <input type="checkbox" class="customizer-addon" data-id="olaplex" data-name="Olaplex No.1/No.2 Molecular Bond Shield" data-price="60" data-time="25">
+                <span class="checkbox-custom"></span>
+                <span class="addon-info">
+                  <span class="addon-title">Olaplex No.1 & No.2 Molecular Bond Shield (+ $60 • 25 mins)</span>
+                  <span class="addon-sub">Prevents and repairs disulfide bond breakage</span>
+                </span>
+              </label>
+
+              <label class="addon-checkbox-label">
+                <input type="checkbox" class="customizer-addon" data-id="scalp" data-name="Scalp Detox Micro-Steam Spa" data-price="50" data-time="30">
+                <span class="checkbox-custom"></span>
+                <span class="addon-info">
+                  <span class="addon-title">Scalp Detox Micro-Steam Spa (+ $50 • 30 mins)</span>
+                  <span class="addon-sub">Tea tree exfoliation, warm ozone steam & tension relief massage</span>
+                </span>
+              </label>
+
+              <label class="addon-checkbox-label">
+                <input type="checkbox" class="customizer-addon" data-id="dusting" data-name="Split-End Micro Dusting" data-price="35" data-time="15">
+                <span class="checkbox-custom"></span>
+                <span class="addon-info">
+                  <span class="addon-title">Split-End Micro Dusting (+ $35 • 15 mins)</span>
+                  <span class="addon-sub">Removes damaged ends without losing a millimeter of length</span>
+                </span>
+              </label>
+
+              <label class="addon-checkbox-label">
+                <input type="checkbox" class="customizer-addon" data-id="aromatherapy" data-name="Rosewater Aromatherapy Head Massage" data-price="25" data-time="15">
+                <span class="checkbox-custom"></span>
+                <span class="addon-info">
+                  <span class="addon-title">Rosewater Aromatherapy Head Massage (+ $25 • 15 mins)</span>
+                  <span class="addon-sub">Calming acupressure ritual with pure French rose essential oil</span>
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <div class="customizer-calc-card">
+            <div class="calc-card-header">
+              <span class="badge-tag">✦ Live Estimate</span>
+              <h3>Package Summary</h3>
+            </div>
+
+            <div class="calc-breakdown">
+              <div class="calc-row">
+                <span id="calc-base-name">Caramel Honey Balayage & Glaze</span>
+                <span id="calc-base-price" class="calc-val">$240</span>
+              </div>
+              <div id="calc-addons-container">
+                <!-- Add-on rows populated here -->
+              </div>
+              <div class="calc-divider"></div>
+              <div class="calc-row">
+                <span>Total Estimated Time:</span>
+                <span id="calc-total-time" class="calc-val gold">160 mins (2h 40m)</span>
+              </div>
+              <div class="calc-row total-row">
+                <span>Total Investment:</span>
+                <span id="calc-total-price" class="calc-val gold-total">$240</span>
+              </div>
+            </div>
+
+            <button type="button" class="btn btn-primary" id="customizer-book-now-btn" style="width: 100%; margin-top: 1.5rem;">
+              <span>Book Customized Package</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+            <p style="text-align:center; font-size: 0.75rem; color: var(--text-muted); margin-top: 0.8rem;">
+              Includes complimentary champagne & botanical scalp wash.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= THE ATELIER EXPERIENCE ================= -->
+    <section class="atelier-section" id="atelier">
+      <div class="container">
+        <div class="atelier-grid">
+          <div class="atelier-visual">
+            <div class="atelier-image-card">
+              <img src="images/stylist.jpg" alt="Élixir Atelier master stylist precision cutting client hair" width="1280" height="960" loading="lazy">
+              <div class="atelier-badge-float">
+                <span>✦ Private Salon Atelier Experience</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="atelier-content">
+            <span class="section-label">Our Philosophy</span>
+            <h2 class="section-title">Mastering the Art of <span class="gold-text">Hair Architecture</span></h2>
+            <p class="hero-lead">
+              We believe your hair is your most personal couture garment. At Élixir Atelier, appointments are never rushed. We combine scientific strand health analysis with haute editorial design.
+            </p>
+
+            <div class="feature-list">
+              <div class="feature-item">
+                <div class="feature-num">01</div>
+                <div class="feature-text">
+                  <h4>Bespoke Contour Consultation</h4>
+                  <p>Every session starts with a 15-minute analysis of your bone structure, skin undertone, and hair porosity to customize shades and silhouettes uniquely for you.</p>
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <div class="feature-num">02</div>
+                <div class="feature-text">
+                  <h4>Clean High-Performance Chemistry</h4>
+                  <p>We exclusively utilize sulfate-free, ammonia-free, and vegan certified French & Japanese formulations that strengthen hair bonds from the cortex outward.</p>
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <div class="feature-num">03</div>
+                <div class="feature-text">
+                  <h4>Sensory Sanctuary Hospitality</h4>
+                  <p>Sip freshly brewed espresso, cold sparkling botanical teas, or chilled champagne in our private acoustic stations designed for tranquil rejuvenation.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CURATED LOOKBOOK GALLERY ================= -->
+    <section class="gallery-section" id="lookbook">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Visual Inspiration</span>
+          <h2 class="section-title">Curated <span class="gold-text">Lookbook</span></h2>
+          <p class="section-sub">Explore our latest runway and editorial transformations. Tap any look to view formula details and book with our specialists.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <!-- Look 1 -->
+          <div class="gallery-item lookbook-card" 
+               data-title="Bohemian Goddess Knotless Braids" 
+               data-stylist="Amara Vance" 
+               data-service="Bohemian Goddess Knotless Braids" 
+               data-price="$280" 
+               data-duration="210 mins" 
+               data-img="images/braids.jpg"
+               data-formula="Ultra-light knotless parting with 100% Raw Virgin Cambodian human curls, finished with 24k gold filigree cuffs & rosewater scalp mist."
+               data-maintenance="Every 8–10 weeks with scalp refresh at week 4.">
+            <img src="images/braids.jpg" alt="Knotless bohemian box braids with gold cuffs" loading="lazy">
+            <div class="gallery-overlay">
+              <h5>Bohemian Goddess Braids</h5>
+              <p>View Look & Formula Details ↗</p>
+            </div>
+          </div>
+
+          <!-- Look 2 -->
+          <div class="gallery-item lookbook-card" 
+               data-title="Liquid Glass Blunt Bob" 
+               data-stylist="Julian Rey" 
+               data-service="Liquid Glass Silk Press Ritual" 
+               data-price="$135" 
+               data-duration="110 mins" 
+               data-img="images/silkpress.jpg"
+               data-formula="Diamond steam infusion with micro-molecular thermal shield and razor-sharp perimeter blunt weight line cut."
+               data-maintenance="Every 3–4 weeks for silk blowout & end dusting.">
+            <img src="images/silkpress.jpg" alt="Blunt bob cut with glass hair silk press" loading="lazy">
+            <div class="gallery-overlay">
+              <h5>Liquid Glass Blunt Bob</h5>
+              <p>View Look & Formula Details ↗</p>
+            </div>
+          </div>
+
+          <!-- Look 3 -->
+          <div class="gallery-item lookbook-card" 
+               data-title="Dimensional Caramel Balayage" 
+               data-stylist="Camille Laurent" 
+               data-service="Caramel Honey Balayage & Glaze" 
+               data-price="$240" 
+               data-duration="160 mins" 
+               data-img="images/after.jpg"
+               data-formula="Hand-painted French balayage with Level 9 warm caramel beige toner, Olaplex No.1/2 bond therapy, and signature blowout."
+               data-maintenance="Every 12–16 weeks with a 6-week gloss glaze refresh.">
+            <img src="images/after.jpg" alt="Honey caramel balayage with voluminous blowout" loading="lazy">
+            <div class="gallery-overlay">
+              <h5>Dimensional Honey Balayage</h5>
+              <p>View Look & Formula Details ↗</p>
+            </div>
+          </div>
+
+          <!-- Look 4 -->
+          <div class="gallery-item lookbook-card" 
+               data-title="Runway Sculptural Volume Blowout" 
+               data-stylist="Julian Rey" 
+               data-service="Architectural Precision Haircut" 
+               data-price="$110" 
+               data-duration="75 mins" 
+               data-img="images/hero.jpg"
+               data-formula="Long layered face-framing silhouette cut mapped to cheekbone structure with round-brush ceramic barrel blowout."
+               data-maintenance="Every 8–10 weeks for shape preservation.">
+            <img src="images/hero.jpg" alt="Signature blowout waves in luxury salon" loading="lazy">
+            <div class="gallery-overlay">
+              <h5>Runway Volume Blowout</h5>
+              <p>View Look & Formula Details ↗</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= MASTER STYLISTS ROSTER ================= -->
+    <section class="stylists-section" id="stylists">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Artisans</span>
+          <h2 class="section-title">Meet Our <span class="gold-text">Master Stylists</span></h2>
+          <p class="section-sub">Trained across Paris, London, and New York, our artists bring decades of high-fashion editorial and red carpet expertise.</p>
+        </div>
+
+        <div class="stylists-grid">
+          <!-- Stylist 1 -->
+          <div class="stylist-card">
+            <div class="stylist-img-wrap">
+              <img src="images/stylist.jpg" alt="Camille Laurent - Creative Director" loading="lazy">
+            </div>
+            <div class="stylist-content">
+              <div class="stylist-role">Creative Color Director</div>
+              <h3 class="stylist-name">Camille Laurent</h3>
+              <p class="stylist-bio">12 years of French balayage mastery. Celebrated for seamless sun-kissed blends and bespoke gloss toning for delicate hair textures.</p>
+              <div class="stylist-footer">
+                <span class="stylist-specialty">Balayage & Blonding</span>
+                <button type="button" class="btn btn-outline btn-sm open-booking-btn" data-stylist="Camille Laurent">Book with Camille</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stylist 2 -->
+          <div class="stylist-card">
+            <div class="stylist-img-wrap">
+              <img src="images/braids.jpg" alt="Amara Vance - Texture & Protective Specialist" loading="lazy">
+            </div>
+            <div class="stylist-content">
+              <div class="stylist-role">Texture & Protective Artist</div>
+              <h3 class="stylist-name">Amara Vance</h3>
+              <p class="stylist-bio">Pioneer in scalp-first protective styling, tension-free knotless braiding, and moisture-rich silk presses that preserve curl pattern integrity.</p>
+              <div class="stylist-footer">
+                <span class="stylist-specialty">Braids & Silk Press</span>
+                <button type="button" class="btn btn-outline btn-sm open-booking-btn" data-stylist="Amara Vance">Book with Amara</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stylist 3 -->
+          <div class="stylist-card">
+            <div class="stylist-img-wrap">
+              <img src="images/silkpress.jpg" alt="Julian Rey - Precision Sculptor" loading="lazy">
+            </div>
+            <div class="stylist-content">
+              <div class="stylist-role">Lead Hair Architect</div>
+              <h3 class="stylist-name">Julian Rey</h3>
+              <p class="stylist-bio">Specialist in geometric bobs, dry haircutting, and molecular bond reconstruction. Creates shapes that effortlessly fall into place every morning.</p>
+              <div class="stylist-footer">
+                <span class="stylist-specialty">Precision Cuts & Bobs</span>
+                <button type="button" class="btn btn-outline btn-sm open-booking-btn" data-stylist="Julian Rey">Book with Julian</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CLIENT REVIEWS & VERIFIED PRESS ================= -->
+    <section class="reviews-section" id="reviews">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Acclaim & Stories</span>
+          <h2 class="section-title">Loved by <span class="gold-text">Discerning Clients</span></h2>
+          <p class="section-sub">Over 2,400 verified five-star transformations across New York & international travelers.</p>
+        </div>
+
+        <!-- Review Category Filters & Action -->
+        <div class="reviews-toolbar">
+          <div class="review-filter-pills" id="review-filter-pills">
+            <button type="button" class="review-pill-btn active" data-review-filter="all">All Reviews (2,400+)</button>
+            <button type="button" class="review-pill-btn" data-review-filter="balayage">Balayage & Color</button>
+            <button type="button" class="review-pill-btn" data-review-filter="silkpress">Silk Press & Texture</button>
+            <button type="button" class="review-pill-btn" data-review-filter="braids">Protective Braids</button>
+            <button type="button" class="review-pill-btn" data-review-filter="cuts">Precision Cuts</button>
+          </div>
+          <button type="button" class="btn btn-outline btn-sm" id="write-review-open-btn">
+            <span>✍ Leave a Client Review</span>
+          </button>
+        </div>
+
+        <div class="reviews-grid" id="reviews-container">
+          <!-- Review 1 -->
+          <div class="review-card" data-review-category="balayage">
+            <div class="stars">★★★★★</div>
+            <p class="review-quote">"The caramel balayage Camille did is pure magic. People stop me on 5th Avenue asking who does my hair. The salon feels like a private Parisian townhouse."</p>
+            <div class="reviewer-meta">
+              <div class="reviewer-avatar">SC</div>
+              <div class="reviewer-info">
+                <h5>Sophia Carrington</h5>
+                <span>Verified Client • Balayage & Blowout</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 2 -->
+          <div class="review-card" data-review-category="braids">
+            <div class="stars">★★★★★</div>
+            <p class="review-quote">"Amara’s knotless braids are the lightest, most comfortable I’ve ever had. Zero headaches, immaculate parting, and the gold cuffs added such regal elegance."</p>
+            <div class="reviewer-meta">
+              <div class="reviewer-avatar">MA</div>
+              <div class="reviewer-info">
+                <h5>Maya Adeleke</h5>
+                <span>Verified Client • Bohemian Braids</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="review-card" data-review-category="silkpress">
+            <div class="stars">★★★★★</div>
+            <p class="review-quote">"Julian’s precision bob cut completely redefined my jawline. My silk press survived three days in NYC humidity without curling up. Unrivaled artistry."</p>
+            <div class="reviewer-meta">
+              <div class="reviewer-avatar">EL</div>
+              <div class="reviewer-info">
+                <h5>Elena Lin</h5>
+                <span>Verified Client • Precision Cut & Silk Press</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 4 -->
+          <div class="review-card" data-review-category="cuts">
+            <div class="stars">★★★★★</div>
+            <p class="review-quote">"The botanical scalp massage alone is worth the trip. Julian understood my face shape immediately and sculpted layers that require zero morning styling."</p>
+            <div class="reviewer-meta">
+              <div class="reviewer-avatar">GW</div>
+              <div class="reviewer-info">
+                <h5>Genevieve West</h5>
+                <span>Verified Client • Architectural Precision Cut</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= STICKY MOBILE QUICK-ACTION BAR ================= -->
+  <aside class="sticky-mobile-bar" aria-label="Mobile Quick Booking">
+    <div class="mobile-bar-info">
+      <span class="mobile-bar-title">Élixir Atelier</span>
+      <span class="mobile-bar-meta"><span class="pulse-dot"></span> Open Today til 8PM</span>
+    </div>
+    <button type="button" class="btn btn-primary btn-sm open-booking-btn">
+      <span>Book • From $45</span>
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </button>
+  </aside>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <div class="brand-monogram">É</div>
+            <div class="brand-text">
+              <span class="brand-title">ÉLIXIR</span>
+              <span class="brand-subtitle">ATELIER</span>
+            </div>
+          </div>
+          <p>Haute coiffure, dimensional color, and bespoke hair architecture designed for effortless elegance and enduring hair health.</p>
+          <div class="social-links">
+            <a href="#" class="social-btn" aria-label="Instagram">IG</a>
+            <a href="#" class="social-btn" aria-label="TikTok">TT</a>
+            <a href="#" class="social-btn" aria-label="Pinterest">PIN</a>
+            <a href="https://wa.me/12125550198" target="_blank" class="social-btn" aria-label="WhatsApp Concierge">WA</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Quick Navigation</h5>
+          <ul class="footer-links">
+            <li><a href="#hero">Atelier Home</a></li>
+            <li><a href="#transformations">Before & After</a></li>
+            <li><a href="#diagnostic">Hair Diagnostic</a></li>
+            <li><a href="#services">Services & Rates</a></li>
+            <li><a href="#customizer">Package Customizer</a></li>
+            <li><a href="#stylists">Master Stylists</a></li>
+            <li><a href="#reviews">Client Stories</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Studio Location</h5>
+          <p style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.6; margin-bottom: 0.8rem;">
+            450 Madison Avenue, 4th Floor<br>
+            New York, NY 10022<br>
+            Between 50th & 51st Street
+          </p>
+          <p style="color: var(--gold-400); font-size: 0.85rem; font-weight: 600;">
+            Direct Concierge: +1 (212) 555-0198
+          </p>
+        </div>
+
+        <div class="footer-col footer-newsletter">
+          <h5>VIP Atelier Club</h5>
+          <p>Subscribe for exclusive seasonal lookbook drops, priority holiday reservations, and 15% off your first visit.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for joining the VIP Atelier Club. Check your inbox for your 15% invitation code.');">
+            <input type="email" class="newsletter-input" placeholder="Your email address..." required>
+            <button type="submit" class="btn btn-primary btn-sm">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Élixir Atelier. All rights reserved. Haute Coiffure Excellence.</p>
+        <p>Crafted with precision & passion for beautiful hair.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= 4-STEP INTERACTIVE BOOKING WIZARD MODAL ================= -->
+  <div class="modal-backdrop" id="booking-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-heading">
+    <div class="booking-modal">
+      
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <div>
+          <span class="section-label" style="margin-bottom: 0.2rem;">Concierge Booking</span>
+          <h3 id="modal-heading" style="font-size: 1.35rem;">Reserve Your Experience</h3>
+        </div>
+        <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Close booking modal">✕</button>
+      </div>
+
+      <!-- Wizard Progress Indicators -->
+      <div class="wizard-progress">
+        <div class="wizard-step-node active" id="node-1">
+          <span class="step-node-num">1</span>
+          <span>Service & Perks</span>
+        </div>
+        <div class="wizard-step-node" id="node-2">
+          <span class="step-node-num">2</span>
+          <span>Stylist</span>
+        </div>
+        <div class="wizard-step-node" id="node-3">
+          <span class="step-node-num">3</span>
+          <span>Date & Time</span>
+        </div>
+        <div class="wizard-step-node" id="node-4">
+          <span class="step-node-num">4</span>
+          <span>Confirm</span>
+        </div>
+      </div>
+
+      <!-- Modal Body (Steps) -->
+      <div class="modal-body">
+        
+        <!-- STEP 1: Select Service & Add-Ons -->
+        <div class="wizard-step-content active" id="step-1">
+          <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;">
+            Choose your signature hair service and optional luxury restorative add-ons.
+          </p>
+          <div class="service-pick-grid">
+            <div class="service-pick-item selected" data-service="Caramel Honey Balayage & Glaze" data-price="$240" data-duration="160 mins">
+              <div class="pick-item-info">
+                <h5>Caramel Honey Balayage & Glaze</h5>
+                <span>⏱ 160 mins • Multi-tonal hand painting & gloss</span>
+              </div>
+              <div class="pick-item-price">$240</div>
+            </div>
+
+            <div class="service-pick-item" data-service="Architectural Precision Haircut" data-price="$110" data-duration="75 mins">
+              <div class="pick-item-info">
+                <h5>Architectural Precision Haircut</h5>
+                <span>⏱ 75 mins • Bone-structure customized cut & blowout</span>
+              </div>
+              <div class="pick-item-price">$110</div>
+            </div>
+
+            <div class="service-pick-item" data-service="Liquid Glass Silk Press Ritual" data-price="$135" data-duration="110 mins">
+              <div class="pick-item-info">
+                <h5>Liquid Glass Silk Press Ritual</h5>
+                <span>⏱ 110 mins • High shine steam treatment & silk press</span>
+              </div>
+              <div class="pick-item-price">$135</div>
+            </div>
+
+            <div class="service-pick-item" data-service="Bohemian Goddess Knotless Braids" data-price="$280" data-duration="210 mins">
+              <div class="pick-item-info">
+                <h5>Bohemian Goddess Knotless Braids</h5>
+                <span>⏱ 210 mins • Zero-tension knotless with curls & cuffs</span>
+              </div>
+              <div class="pick-item-price">$280</div>
+            </div>
+
+            <div class="service-pick-item" data-service="Full Dimension All-Over Gloss & Color" data-price="$175" data-duration="120 mins">
+              <div class="pick-item-info">
+                <h5>Full Dimension All-Over Gloss & Color</h5>
+                <span>⏱ 120 mins • Organic tone-infusion color bath</span>
+              </div>
+              <div class="pick-item-price">$175</div>
+            </div>
+
+            <div class="service-pick-item" data-service="K18 Molecular Peptide & Scalp Detox" data-price="$95" data-duration="90 mins">
+              <div class="pick-item-info">
+                <h5>K18 Molecular Peptide & Scalp Detox</h5>
+                <span>⏱ 90 mins • Deep strand repair & scalp revival</span>
+              </div>
+              <div class="pick-item-price">$95</div>
+            </div>
+          </div>
+
+          <!-- Wizard Modal Add-Ons Selector -->
+          <div class="modal-addons-block">
+            <h5 class="modal-addons-title">Optional Restorative Add-Ons:</h5>
+            <div class="modal-addons-list">
+              <label class="modal-addon-chip">
+                <input type="checkbox" class="wizard-addon-check" data-name="Gloss Glaze" data-price="45" data-time="20">
+                <span>+ Gloss Glaze (+$45)</span>
+              </label>
+              <label class="modal-addon-chip">
+                <input type="checkbox" class="wizard-addon-check" data-name="Olaplex Shield" data-price="60" data-time="25">
+                <span>+ Olaplex Bond Shield (+$60)</span>
+              </label>
+              <label class="modal-addon-chip">
+                <input type="checkbox" class="wizard-addon-check" data-name="Scalp Steam Spa" data-price="50" data-time="30">
+                <span>+ Scalp Steam Spa (+$50)</span>
+              </label>
+              <label class="modal-addon-chip">
+                <input type="checkbox" class="wizard-addon-check" data-name="Micro Dusting" data-price="35" data-time="15">
+                <span>+ Split-End Dusting (+$35)</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 2: Choose Stylist -->
+        <div class="wizard-step-content" id="step-2">
+          <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.25rem;">
+            Select your preferred artisan or let us pair you with our first available master.
+          </p>
+          <div class="stylist-pick-grid">
+            <div class="stylist-pick-card selected" data-stylist="First Available Master">
+              <div class="stylist-pick-avatar" style="background: var(--gold-gradient); display:flex; align-items:center; justify-content:center; color: #000; font-weight:700;">
+                ✦
+              </div>
+              <div>
+                <h5 style="font-size: 0.95rem;">First Available Master</h5>
+                <span style="font-size: 0.75rem; color: var(--gold-400);">Maximum schedule flexibility</span>
+              </div>
+            </div>
+
+            <div class="stylist-pick-card" data-stylist="Camille Laurent">
+              <div class="stylist-pick-avatar">
+                <img src="images/stylist.jpg" alt="Camille Laurent">
+              </div>
+              <div>
+                <h5 style="font-size: 0.95rem;">Camille Laurent</h5>
+                <span style="font-size: 0.75rem; color: var(--text-muted);">Color & Balayage Director</span>
+              </div>
+            </div>
+
+            <div class="stylist-pick-card" data-stylist="Amara Vance">
+              <div class="stylist-pick-avatar">
+                <img src="images/braids.jpg" alt="Amara Vance">
+              </div>
+              <div>
+                <h5 style="font-size: 0.95rem;">Amara Vance</h5>
+                <span style="font-size: 0.75rem; color: var(--text-muted);">Texture & Braids Specialist</span>
+              </div>
+            </div>
+
+            <div class="stylist-pick-card" data-stylist="Julian Rey">
+              <div class="stylist-pick-avatar">
+                <img src="images/silkpress.jpg" alt="Julian Rey">
+              </div>
+              <div>
+                <h5 style="font-size: 0.95rem;">Julian Rey</h5>
+                <span style="font-size: 0.75rem; color: var(--text-muted);">Precision Hair Architect</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 3: Date & Time -->
+        <div class="wizard-step-content" id="step-3">
+          <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.25rem;">
+            Select your preferred appointment date and arrival time.
+          </p>
+          <div class="date-time-grid">
+            <div class="form-group">
+              <label for="booking-date">Appointment Date</label>
+              <input type="date" id="booking-date" class="form-input">
+            </div>
+
+            <div class="form-group">
+              <label>Available Slots</label>
+              <div class="time-slots-container" id="time-slots-wrapper">
+                <button type="button" class="time-slot-btn selected" data-time="09:30 AM">09:30 AM</button>
+                <button type="button" class="time-slot-btn" data-time="11:00 AM">11:00 AM</button>
+                <button type="button" class="time-slot-btn" data-time="01:15 PM">01:15 PM</button>
+                <button type="button" class="time-slot-btn" data-time="03:00 PM">03:00 PM</button>
+                <button type="button" class="time-slot-btn" data-time="04:45 PM">04:45 PM</button>
+                <button type="button" class="time-slot-btn" data-time="06:30 PM">06:30 PM</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 4: Client Info & Summary -->
+        <div class="wizard-step-content" id="step-4">
+          <div class="booking-summary-box">
+            <div class="summary-row">
+              <span class="summary-label">Selected Experience:</span>
+              <span class="summary-val" id="summary-service">Caramel Honey Balayage & Glaze</span>
+            </div>
+            <div class="summary-row" id="summary-addons-row" style="display: none;">
+              <span class="summary-label">Add-On Enhancements:</span>
+              <span class="summary-val" id="summary-addons-val">None</span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-label">Master Stylist:</span>
+              <span class="summary-val" id="summary-stylist">Camille Laurent</span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-label">Date & Time:</span>
+              <span class="summary-val" id="summary-datetime">Selected Date at 09:30 AM</span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-label">Estimated Duration:</span>
+              <span class="summary-val" id="summary-duration">160 mins</span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-label">Total Investment:</span>
+              <span class="summary-val gold" id="summary-price">$240</span>
+            </div>
+          </div>
+
+          <form id="client-info-form" class="client-form-grid" onsubmit="event.preventDefault();">
+            <div class="form-group">
+              <label for="client-name">Your Full Name *</label>
+              <input type="text" id="client-name" class="form-input" placeholder="e.g. Victoria Sterling" required>
+            </div>
+
+            <div class="form-group">
+              <label for="client-phone">Phone / WhatsApp *</label>
+              <input type="tel" id="client-phone" class="form-input" placeholder="e.g. +1 (555) 019-2834" required>
+            </div>
+
+            <div class="form-group full-span">
+              <label for="client-notes">Hair History & Special Requests</label>
+              <input type="text" id="client-notes" class="form-input" placeholder="e.g. Previous color history, beverage preference, or inspo reference">
+            </div>
+          </form>
+        </div>
+
+        <!-- STEP 5: Success Ticket State with Calendar Integration -->
+        <div class="wizard-step-content" id="step-success">
+          <div class="confirmation-success">
+            <div class="success-icon-wrap">✦</div>
+            <h3 style="font-size: 1.8rem; margin-bottom: 0.3rem;">Appointment Reserved</h3>
+            <p style="color: var(--text-secondary); max-width: 460px; margin: 0 auto 1.2rem auto;">
+              Your bespoke reservation has been confirmed and saved to our Atelier Concierge system.
+            </p>
+            <div class="booking-ref-badge" id="confirmed-ref-badge">#ELX-2026-8942</div>
+
+            <!-- Calendar Export Integration Row -->
+            <div class="calendar-action-row">
+              <a href="#" id="google-calendar-btn" target="_blank" class="btn btn-outline btn-sm">
+                <span>📅 Add to Google Calendar</span>
+              </a>
+              <button type="button" id="download-ics-btn" class="btn btn-outline btn-sm">
+                <span>🍏 Download Apple/Outlook (.ICS)</span>
+              </button>
+            </div>
+
+            <div style="display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.2rem;">
+              <a href="#" id="whatsapp-dispatch-link" target="_blank" class="btn btn-primary">
+                <span>Open in WhatsApp</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <button type="button" class="btn btn-outline" id="finish-booking-btn">
+                Done
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Modal Footer Controls -->
+      <div class="modal-footer" id="modal-footer-nav">
+        <button type="button" class="btn btn-outline btn-sm" id="wizard-prev-btn" style="visibility: hidden;">
+          ← Back
+        </button>
+        <button type="button" class="btn btn-primary btn-sm" id="wizard-next-btn">
+          <span>Continue</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= LOOKBOOK LIGHTBOX MODAL ================= -->
+  <div class="modal-backdrop" id="lookbook-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="lookbook-title">
+    <div class="lookbook-modal">
+      <button type="button" class="modal-close-btn" id="lookbook-close-btn" aria-label="Close lookbook details">✕</button>
+      <div class="lookbook-modal-grid">
+        <div class="lookbook-modal-img-wrap">
+          <img id="lb-modal-img" src="images/hero.jpg" alt="Lookbook visual closeup">
+        </div>
+        <div class="lookbook-modal-content">
+          <span class="section-label" id="lb-modal-stylist">Camille Laurent</span>
+          <h3 id="lb-modal-title" style="font-size: 1.6rem; margin-bottom: 0.6rem;">Caramel Honey Balayage</h3>
+          <p id="lb-modal-formula" style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin-bottom: 1.2rem;">
+            Formula & technique details.
+          </p>
+          
+          <div class="lookbook-specs">
+            <div class="lb-spec">
+              <span>Service Match</span>
+              <strong id="lb-modal-service">Caramel Honey Balayage</strong>
+            </div>
+            <div class="lb-spec">
+              <span>Duration</span>
+              <strong id="lb-modal-duration">160 mins</strong>
+            </div>
+            <div class="lb-spec">
+              <span>Investment</span>
+              <strong class="gold-text" id="lb-modal-price">$240</strong>
+            </div>
+            <div class="lb-spec">
+              <span>Maintenance Cycle</span>
+              <strong id="lb-modal-maint">12–16 weeks</strong>
+            </div>
+          </div>
+
+          <button type="button" class="btn btn-primary" id="lb-modal-book-btn" style="width: 100%; margin-top: 1.5rem;">
+            <span>Book This Exact Look</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= CLIENT & STAFF ATELIER PORTAL MODAL ================= -->
+  <div class="modal-backdrop" id="portal-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="portal-heading">
+    <div class="portal-modal">
+      <div class="modal-header">
+        <div>
+          <span class="section-label" style="margin-bottom: 0.2rem;">Atelier Concierge Management</span>
+          <h3 id="portal-heading" style="font-size: 1.35rem;">Client & Staff Portal</h3>
+        </div>
+        <button type="button" class="modal-close-btn" id="portal-close-btn" aria-label="Close portal modal">✕</button>
+      </div>
+
+      <!-- Portal Tabs -->
+      <div class="portal-tabs">
+        <button type="button" class="portal-tab-btn active" data-tab="client">Client Lookup</button>
+        <button type="button" class="portal-tab-btn" data-tab="admin">Staff Atelier Dashboard</button>
+      </div>
+
+      <div class="modal-body">
+        <!-- CLIENT LOOKUP PANE -->
+        <div class="portal-pane active" id="portal-client-pane">
+          <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.2rem;">
+            Enter your booking reference code (e.g. <code>#ELX-2026-8942</code>) or mobile phone to view, reschedule, or manage your reservation.
+          </p>
+
+          <form id="client-lookup-form" class="lookup-input-row" onsubmit="event.preventDefault();">
+            <input type="text" id="lookup-query" class="form-input" placeholder="e.g. ELX-2026-8942 or 555-019-2834" required>
+            <button type="submit" class="btn btn-primary btn-sm">Find Booking</button>
+          </form>
+
+          <div id="lookup-result-container" style="margin-top: 1.5rem;"></div>
+        </div>
+
+        <!-- STAFF ADMIN PANE -->
+        <div class="portal-pane" id="portal-admin-pane">
+          <!-- PIN Lock Gate -->
+          <div id="admin-pin-gate">
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;">
+              Please enter the Atelier Staff Concierge Access PIN: <em>(Default: <code>1234</code>)</em>
+            </p>
+            <form id="admin-pin-form" class="lookup-input-row" onsubmit="event.preventDefault();">
+              <input type="password" id="admin-pin-input" class="form-input" placeholder="Enter Staff PIN..." maxlength="8" required>
+              <button type="submit" class="btn btn-primary btn-sm">Unlock Dashboard</button>
+            </form>
+          </div>
+
+          <!-- Unlocked Staff Dashboard -->
+          <div id="admin-dashboard-view" style="display: none;">
+            <div class="admin-toolbar">
+              <div class="admin-stats">
+                <span class="stat-pill"><strong id="admin-total-count">0</strong> Bookings</span>
+                <span class="stat-pill gold"><strong id="admin-revenue-est">$0</strong> Projected</span>
+              </div>
+              <div class="admin-actions">
+                <button type="button" class="btn btn-outline btn-sm" id="admin-add-walkin-btn">+ Walk-In</button>
+                <button type="button" class="btn btn-outline btn-sm" id="admin-export-csv-btn">📥 Export CSV</button>
+              </div>
+            </div>
+
+            <!-- Filter Controls -->
+            <div class="admin-filters-row">
+              <select id="admin-stylist-filter" class="form-select sm">
+                <option value="all">All Stylists</option>
+                <option value="Camille Laurent">Camille Laurent</option>
+                <option value="Amara Vance">Amara Vance</option>
+                <option value="Julian Rey">Julian Rey</option>
+                <option value="First Available Master">First Available</option>
+              </select>
+              <input type="text" id="admin-search-input" class="form-input sm" placeholder="Search client or ref...">
+            </div>
+
+            <!-- Bookings Table -->
+            <div class="admin-table-container">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Ref #</th>
+                    <th>Client</th>
+                    <th>Service & Stylist</th>
+                    <th>Date & Slot</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="admin-table-body">
+                  <!-- Populated dynamically -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= WRITE A REVIEW MODAL ================= -->
+  <div class="modal-backdrop" id="review-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="review-modal-title">
+    <div class="booking-modal" style="max-width: 500px;">
+      <div class="modal-header">
+        <div>
+          <span class="section-label" style="margin-bottom: 0.2rem;">Client Feedback</span>
+          <h3 id="review-modal-title" style="font-size: 1.35rem;">Write an Atelier Review</h3>
+        </div>
+        <button type="button" class="modal-close-btn" id="review-modal-close-btn" aria-label="Close review modal">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <form id="submit-review-form" onsubmit="event.preventDefault();">
+          <div class="form-group" style="margin-bottom: 1rem;">
+            <label for="rev-author">Your Name</label>
+            <input type="text" id="rev-author" class="form-input" placeholder="e.g. Genevieve Thorne" required>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 1rem;">
+            <label for="rev-service-select">Service Experienced</label>
+            <select id="rev-service-select" class="form-select">
+              <option value="balayage">Caramel Honey Balayage & Glaze</option>
+              <option value="silkpress">Liquid Glass Silk Press Ritual</option>
+              <option value="braids">Bohemian Goddess Knotless Braids</option>
+              <option value="cuts">Architectural Precision Haircut</option>
+            </select>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 1rem;">
+            <label>Rating</label>
+            <div class="star-rating-selector" id="star-rating-selector">
+              <span class="star-item active" data-stars="1">★</span>
+              <span class="star-item active" data-stars="2">★</span>
+              <span class="star-item active" data-stars="3">★</span>
+              <span class="star-item active" data-stars="4">★</span>
+              <span class="star-item active" data-stars="5">★</span>
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 1.25rem;">
+            <label for="rev-text">Your Experience & Result</label>
+            <textarea id="rev-text" class="form-input" rows="3" placeholder="Tell us about your transformation..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%;">
+            <span>Publish Review</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= LIVE SOCIAL PROOF NOTIFICATION TOASTS ================= -->
+  <div class="live-toast-container" id="live-toast-container" aria-live="polite"></div>
+
+  <!-- ================= FLOATING SOUNDSCAPE CONTROLLER ================= -->
+  <div class="floating-audio-widget" id="floating-audio-widget">
+    <button type="button" class="audio-widget-toggle soundscape-toggle-btn" id="audio-widget-btn" title="Toggle Parisian Atelier Lounge Soundscape">
+      <span class="audio-wave"></span>
+      <span class="audio-wave"></span>
+      <span class="audio-wave"></span>
+      <span class="audio-label">Soundscape</span>
+    </button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
